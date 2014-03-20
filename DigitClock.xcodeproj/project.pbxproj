@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FE7C8D818DB18A8001B8C5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D718DB18A8001B8C5D /* Foundation.framework */; };
+		7FE7C8DA18DB18A8001B8C5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D918DB18A8001B8C5D /* CoreGraphics.framework */; };
+		7FE7C8DC18DB18A8001B8C5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8DB18DB18A8001B8C5D /* UIKit.framework */; };
+		7FE7C8E218DB18A8001B8C5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FE7C8E018DB18A8001B8C5D /* InfoPlist.strings */; };
+		7FE7C8E418DB18A8001B8C5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7C8E318DB18A8001B8C5D /* main.m */; };
+		7FE7C8E818DB18A8001B8C5D /* MOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7C8E718DB18A8001B8C5D /* MOAppDelegate.m */; };
+		7FE7C8EB18DB18A8001B8C5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE7C8E918DB18A8001B8C5D /* Main.storyboard */; };
+		7FE7C8EE18DB18A8001B8C5D /* MOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7C8ED18DB18A8001B8C5D /* MOViewController.m */; };
+		7FE7C8F018DB18A8001B8C5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE7C8EF18DB18A8001B8C5D /* Images.xcassets */; };
+		7FE7C8F718DB18A8001B8C5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8F618DB18A8001B8C5D /* XCTest.framework */; };
+		7FE7C8F818DB18A8001B8C5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D718DB18A8001B8C5D /* Foundation.framework */; };
+		7FE7C8F918DB18A8001B8C5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8DB18DB18A8001B8C5D /* UIKit.framework */; };
+		7FE7C90118DB18A8001B8C5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FE7C8FF18DB18A8001B8C5D /* InfoPlist.strings */; };
+		7FE7C90318DB18A8001B8C5D /* DigitClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7C90218DB18A8001B8C5D /* DigitClockTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FE7C8FA18DB18A8001B8C5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FE7C8CC18DB18A8001B8C5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FE7C8D318DB18A8001B8C5D;
+			remoteInfo = DigitClock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F39563F18DB264300C963C9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7FE7C8D418DB18A8001B8C5D /* DigitClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE7C8D718DB18A8001B8C5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7FE7C8D918DB18A8001B8C5D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7FE7C8DB18DB18A8001B8C5D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7FE7C8DF18DB18A8001B8C5D /* DigitClock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitClock-Info.plist"; sourceTree = "<group>"; };
+		7FE7C8E118DB18A8001B8C5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7FE7C8E318DB18A8001B8C5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7FE7C8E518DB18A8001B8C5D /* DigitClock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DigitClock-Prefix.pch"; sourceTree = "<group>"; };
+		7FE7C8E618DB18A8001B8C5D /* MOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOAppDelegate.h; sourceTree = "<group>"; };
+		7FE7C8E718DB18A8001B8C5D /* MOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOAppDelegate.m; sourceTree = "<group>"; };
+		7FE7C8EA18DB18A8001B8C5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FE7C8EC18DB18A8001B8C5D /* MOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOViewController.h; sourceTree = "<group>"; };
+		7FE7C8ED18DB18A8001B8C5D /* MOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOViewController.m; sourceTree = "<group>"; };
+		7FE7C8EF18DB18A8001B8C5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7FE7C8F518DB18A8001B8C5D /* DigitClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitClockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE7C8F618DB18A8001B8C5D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7FE7C8FE18DB18A8001B8C5D /* DigitClockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitClockTests-Info.plist"; sourceTree = "<group>"; };
+		7FE7C90018DB18A8001B8C5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7FE7C90218DB18A8001B8C5D /* DigitClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitClockTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FE7C8D118DB18A8001B8C5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE7C8DA18DB18A8001B8C5D /* CoreGraphics.framework in Frameworks */,
+				7FE7C8DC18DB18A8001B8C5D /* UIKit.framework in Frameworks */,
+				7FE7C8D818DB18A8001B8C5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE7C8F218DB18A8001B8C5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE7C8F718DB18A8001B8C5D /* XCTest.framework in Frameworks */,
+				7FE7C8F918DB18A8001B8C5D /* UIKit.framework in Frameworks */,
+				7FE7C8F818DB18A8001B8C5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FE7C8CB18DB18A8001B8C5D = {
+			isa = PBXGroup;
+			children = (
+				7FE7C8DD18DB18A8001B8C5D /* DigitClock */,
+				7FE7C8FC18DB18A8001B8C5D /* DigitClockTests */,
+				7FE7C8D618DB18A8001B8C5D /* Frameworks */,
+				7FE7C8D518DB18A8001B8C5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FE7C8D518DB18A8001B8C5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7C8D418DB18A8001B8C5D /* DigitClock.app */,
+				7FE7C8F518DB18A8001B8C5D /* DigitClockTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FE7C8D618DB18A8001B8C5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F39563F18DB264300C963C9 /* QuartzCore.framework */,
+				7FE7C8D718DB18A8001B8C5D /* Foundation.framework */,
+				7FE7C8D918DB18A8001B8C5D /* CoreGraphics.framework */,
+				7FE7C8DB18DB18A8001B8C5D /* UIKit.framework */,
+				7FE7C8F618DB18A8001B8C5D /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7FE7C8DD18DB18A8001B8C5D /* DigitClock */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7C8E618DB18A8001B8C5D /* MOAppDelegate.h */,
+				7FE7C8E718DB18A8001B8C5D /* MOAppDelegate.m */,
+				7FE7C8E918DB18A8001B8C5D /* Main.storyboard */,
+				7FE7C8EC18DB18A8001B8C5D /* MOViewController.h */,
+				7FE7C8ED18DB18A8001B8C5D /* MOViewController.m */,
+				7FE7C8EF18DB18A8001B8C5D /* Images.xcassets */,
+				7FE7C8DE18DB18A8001B8C5D /* Supporting Files */,
+			);
+			path = DigitClock;
+			sourceTree = "<group>";
+		};
+		7FE7C8DE18DB18A8001B8C5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7C8DF18DB18A8001B8C5D /* DigitClock-Info.plist */,
+				7FE7C8E018DB18A8001B8C5D /* InfoPlist.strings */,
+				7FE7C8E318DB18A8001B8C5D /* main.m */,
+				7FE7C8E518DB18A8001B8C5D /* DigitClock-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FE7C8FC18DB18A8001B8C5D /* DigitClockTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7C90218DB18A8001B8C5D /* DigitClockTests.m */,
+				7FE7C8FD18DB18A8001B8C5D /* Supporting Files */,
+			);
+			path = DigitClockTests;
+			sourceTree = "<group>";
+		};
+		7FE7C8FD18DB18A8001B8C5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FE7C8FE18DB18A8001B8C5D /* DigitClockTests-Info.plist */,
+				7FE7C8FF18DB18A8001B8C5D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FE7C8D318DB18A8001B8C5D /* DigitClock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE7C90618DB18A8001B8C5D /* Build configuration list for PBXNativeTarget "DigitClock" */;
+			buildPhases = (
+				7FE7C8D018DB18A8001B8C5D /* Sources */,
+				7FE7C8D118DB18A8001B8C5D /* Frameworks */,
+				7FE7C8D218DB18A8001B8C5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DigitClock;
+			productName = DigitClock;
+			productReference = 7FE7C8D418DB18A8001B8C5D /* DigitClock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7FE7C8F418DB18A8001B8C5D /* DigitClockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE7C90918DB18A8001B8C5D /* Build configuration list for PBXNativeTarget "DigitClockTests" */;
+			buildPhases = (
+				7FE7C8F118DB18A8001B8C5D /* Sources */,
+				7FE7C8F218DB18A8001B8C5D /* Frameworks */,
+				7FE7C8F318DB18A8001B8C5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FE7C8FB18DB18A8001B8C5D /* PBXTargetDependency */,
+			);
+			name = DigitClockTests;
+			productName = DigitClockTests;
+			productReference = 7FE7C8F518DB18A8001B8C5D /* DigitClockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FE7C8CC18DB18A8001B8C5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MO;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = minsOne;
+				TargetAttributes = {
+					7FE7C8F418DB18A8001B8C5D = {
+						TestTargetID = 7FE7C8D318DB18A8001B8C5D;
+					};
+				};
+			};
+			buildConfigurationList = 7FE7C8CF18DB18A8001B8C5D /* Build configuration list for PBXProject "DigitClock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FE7C8CB18DB18A8001B8C5D;
+			productRefGroup = 7FE7C8D518DB18A8001B8C5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FE7C8D318DB18A8001B8C5D /* DigitClock */,
+				7FE7C8F418DB18A8001B8C5D /* DigitClockTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FE7C8D218DB18A8001B8C5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE7C8F018DB18A8001B8C5D /* Images.xcassets in Resources */,
+				7FE7C8E218DB18A8001B8C5D /* InfoPlist.strings in Resources */,
+				7FE7C8EB18DB18A8001B8C5D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE7C8F318DB18A8001B8C5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE7C90118DB18A8001B8C5D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FE7C8D018DB18A8001B8C5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE7C8E818DB18A8001B8C5D /* MOAppDelegate.m in Sources */,
+				7FE7C8EE18DB18A8001B8C5D /* MOViewController.m in Sources */,
+				7FE7C8E418DB18A8001B8C5D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FE7C8F118DB18A8001B8C5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE7C90318DB18A8001B8C5D /* DigitClockTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FE7C8FB18DB18A8001B8C5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FE7C8D318DB18A8001B8C5D /* DigitClock */;
+			targetProxy = 7FE7C8FA18DB18A8001B8C5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7FE7C8E018DB18A8001B8C5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FE7C8E118DB18A8001B8C5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7FE7C8E918DB18A8001B8C5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FE7C8EA18DB18A8001B8C5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FE7C8FF18DB18A8001B8C5D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FE7C90018DB18A8001B8C5D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FE7C90418DB18A8001B8C5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7FE7C90518DB18A8001B8C5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FE7C90718DB18A8001B8C5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
+				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7FE7C90818DB18A8001B8C5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
+				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7FE7C90A18DB18A8001B8C5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DigitClock.app/DigitClock";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DigitClockTests/DigitClockTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7FE7C90B18DB18A8001B8C5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DigitClock.app/DigitClock";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
+				INFOPLIST_FILE = "DigitClockTests/DigitClockTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FE7C8CF18DB18A8001B8C5D /* Build configuration list for PBXProject "DigitClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE7C90418DB18A8001B8C5D /* Debug */,
+				7FE7C90518DB18A8001B8C5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE7C90618DB18A8001B8C5D /* Build configuration list for PBXNativeTarget "DigitClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE7C90718DB18A8001B8C5D /* Debug */,
+				7FE7C90818DB18A8001B8C5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE7C90918DB18A8001B8C5D /* Build configuration list for PBXNativeTarget "DigitClockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE7C90A18DB18A8001B8C5D /* Debug */,
+				7FE7C90B18DB18A8001B8C5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FE7C8CC18DB18A8001B8C5D /* Project object */;
+}
