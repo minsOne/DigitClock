@@ -16,6 +16,7 @@
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *weekdayLabels;
 @property (nonatomic, weak) NSTimer *timer;
 @property (nonatomic, weak) IBOutlet UIView *clockView;
+@property (nonatomic) NSInteger index;
 @end
 
 @implementation MOViewController
@@ -25,7 +26,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    UIImage *bg = [UIImage imageNamed:@"bg"];
+    UIImage *bg = [UIImage imageNamed:@"bg0"];
+    self.index = 0;
     UIImage *digits = [UIImage imageNamed:@"Digits"];
     
     [self.view.layer setContents:(__bridge id)bg.CGImage];
@@ -90,15 +92,6 @@
     
     NSDateComponents *components = [calendar components:units fromDate:[NSDate date]];
     
-//    NSLog(@"%d %d %d %d %d %d", components.hour,components.minute, components.second, components.month, components.day );
-    NSLog(@"Hour : %d", components.hour);
-    NSLog(@"minute : %d", components.minute);
-    NSLog(@"second : %d", components.second);
-    NSLog(@"month : %d", components.month);
-    NSLog(@"day : %d", components.day);
-    NSLog(@"week : %d", components.week);
-    NSLog(@"weekday : %d", components.weekday);
-    
     [UIView animateWithDuration:1.0 animations:^{
         [self setDigit:components.hour / 10 forView:self.digitViews[0]];
         [self setDigit:components.hour % 10 forView:self.digitViews[1]];
@@ -115,6 +108,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)changeBG:(id)sender
+{
+    if (self.index > 8) {
+        self.index = 0;
+    } else {
+        self.index++;
+    }
+    
+    NSString *bgName = [NSString stringWithFormat:@"bg%d", self.index];
+    NSLog(@"bgName : %@", bgName);
+    UIImage *bg = [UIImage imageNamed:bgName];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
 }
 
 @end
