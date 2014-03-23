@@ -18,11 +18,13 @@
 @property (nonatomic, weak) NSTimer *timer;
 @property (nonatomic) NSInteger index;
 
+@property (nonatomic) CGPoint lastTranslation;
+
 @end
 
 @implementation MOViewController
 
-#define kMinimumPanDistance 100.0f
+#define kMinimumPanDistance 5.0f
 
 UIPanGestureRecognizer *recognizer;
 CGPoint lastRecognizedInterval;
@@ -65,10 +67,10 @@ CGPoint lastRecognizedInterval;
         [weekday setAlpha:0.2];
     }
     
-//    recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizePan:)];
-//    [self.view addGestureRecognizer:recognizer];
-//    
-//    [recognizer setMaximumNumberOfTouches:1];
+    //    recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizePan:)];
+    //    [self.view addGestureRecognizer:recognizer];
+    //
+    //    [recognizer setMaximumNumberOfTouches:1];
     
 }
 
@@ -140,8 +142,43 @@ CGPoint lastRecognizedInterval;
 
 - (IBAction)displayGestureForPanGestureRecognizer:(UIPanGestureRecognizer *)sender
 {
-    CGPoint thisInterval = [sender translationInView:self.view];
-    NSLog(@"%@", NSStringFromCGPoint(thisInterval));
+    CGPoint translation = [sender translationInView:self.view];
+    NSLog(@"%@", NSStringFromCGPoint(translation));
+    
+    switch (sender.state) {
+        case UIGestureRecognizerStateBegan:
+            self.lastTranslation = translation;
+            break;
+        case UIGestureRecognizerStateCancelled:
+            break;
+        case UIGestureRecognizerStateChanged:
+            [self changeViewAlpha:translation];
+            break;
+        case UIGestureRecognizerStateEnded:
+            break;
+        case UIGestureRecognizerStateFailed:
+            break;
+        case UIGestureRecognizerStatePossible:
+            break;
+        default:
+            break;
+    }
+    
+    
+}
+
+- (void)changeViewAlpha:(CGPoint)translation
+{
+    CGFloat alpha = [self.view alpha];
+    NSLog(@"View Alpha : %f", alpha);
+    
+    if ( self.lastTranslation.y > translation.y && alpha < 1.0f ) {
+        [self.view setAlpha:alpha + 0.01f];
+    } else if ( self.lastTranslation.y < translation.y && alpha >= 0.02f ) {
+        [self.view setAlpha:alpha - 0.01f];
+    }
+    
+    self.lastTranslation = translation;
 }
 
 //- (void)didRecognizePan:(UIPanGestureRecognizer*)sender {
@@ -149,9 +186,9 @@ CGPoint lastRecognizedInterval;
 //    NSLog(@"%@", NSStringFromCGPoint(thisInterval));
 //    if (abs(lastRecognizedInterval.x - thisInterval.x) > kMinimumPanDistance ||
 //        abs(lastRecognizedInterval.y - thisInterval.y) > kMinimumPanDistance) {
-//        
+//
 //        lastRecognizedInterval = thisInterval;
-//        
+//
 //        // you would add your method call here
 //    }
 //}
