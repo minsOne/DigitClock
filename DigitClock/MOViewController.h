@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MOSettingViewController.h"
 
-@interface MOViewController : UIViewController
+@interface MOViewController : UIViewController<MOSettingViewControllerDelegate>
+
+- (void)changeBackground:(NSString *)theme;
 
 @end

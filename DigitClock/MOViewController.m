@@ -7,6 +7,7 @@
 //
 
 #import "MOViewController.h"
+#import "MOSettingViewController.h"
 //#import <QuartzCore/QuartzCore.h>
 
 @interface MOViewController ()
@@ -14,6 +15,8 @@
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *digitViews;
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *colonViews;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *weekdayLabels;
+
+@property (nonatomic, weak) IBOutlet UIButton *settingButton;
 
 @property (nonatomic, weak) NSTimer *timer;
 @property (nonatomic) NSInteger index;
@@ -46,7 +49,16 @@ CGPoint lastRecognizedInterval;
 
 - (void)setup
 {
-    UIImage *bg = [UIImage imageNamed:@"bg7"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *bgDefault = [defaults stringForKey:@"Theme"];
+    
+    if (bgDefault == nil) {
+        [defaults setObject:@"bg0" forKey:@"Theme"];
+        bgDefault = @"bg0";
+        [defaults synchronize];
+    }
+    
+    UIImage *bg = [UIImage imageNamed:bgDefault];
     UIImage *digits = [UIImage imageNamed:@"Digits"];
     
     [self.view.layer setContents:(__bridge id)bg.CGImage];
@@ -66,12 +78,6 @@ CGPoint lastRecognizedInterval;
     for (UILabel *weekday in self.weekdayLabels) {
         [weekday setAlpha:0.2];
     }
-    
-    //    recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizePan:)];
-    //    [self.view addGestureRecognizer:recognizer];
-    //
-    //    [recognizer setMaximumNumberOfTouches:1];
-    
 }
 
 - (void)setDigit:(NSInteger)digit forView:(UIView *)view
@@ -127,19 +133,6 @@ CGPoint lastRecognizedInterval;
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)changeBG:(id)sender
-//{
-//    if (self.index > 8) {
-//        self.index = 0;
-//    } else {
-//        self.index++;
-//    }
-//    NSString *bgName = [NSString stringWithFormat:@"bg%d", self.index];
-//    NSLog(@"bgName : %@", bgName);
-//    UIImage *bg = [UIImage imageNamed:bgName];
-//    [self.view.layer setContents:(__bridge id)bg.CGImage];
-//}
-
 - (IBAction)displayGestureForPanGestureRecognizer:(UIPanGestureRecognizer *)sender
 {
     CGPoint translation = [sender translationInView:self.view];
@@ -181,16 +174,31 @@ CGPoint lastRecognizedInterval;
     self.lastTranslation = translation;
 }
 
-//- (void)didRecognizePan:(UIPanGestureRecognizer*)sender {
-//    CGPoint thisInterval = [recognizer translationInView:self.view];
-//    NSLog(@"%@", NSStringFromCGPoint(thisInterval));
-//    if (abs(lastRecognizedInterval.x - thisInterval.x) > kMinimumPanDistance ||
-//        abs(lastRecognizedInterval.y - thisInterval.y) > kMinimumPanDistance) {
-//
-//        lastRecognizedInterval = thisInterval;
-//
-//        // you would add your method call here
-//    }
-//}
+- (IBAction)showSettingView:(id)sender
+{
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MOSettingViewController *destViewController = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
+    destViewController.delegate = self;
+}
+
+- (void)changeBackground:(NSString *)theme
+{
+    NSLog(@"ChangeBackground Theme : %@", theme);
+    UIImage *bg = [UIImage imageNamed:theme];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:theme forKey:@"Theme"];
+    [defaults synchronize];
+}
 
 @end
