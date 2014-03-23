@@ -14,20 +14,37 @@
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *digitViews;
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *colonViews;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *weekdayLabels;
+
 @property (nonatomic, weak) NSTimer *timer;
-@property (nonatomic, weak) IBOutlet UIView *clockView;
 @property (nonatomic) NSInteger index;
+
 @end
 
 @implementation MOViewController
+
+#define kMinimumPanDistance 100.0f
+
+UIPanGestureRecognizer *recognizer;
+CGPoint lastRecognizedInterval;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self setup];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                  target:self
+                                                selector:@selector(tick)
+                                                userInfo:nil
+                                                 repeats:YES];
+    [self tick];
+}
 
-    UIImage *bg = [UIImage imageNamed:@"bg0"];
-    self.index = 0;
+- (void)setup
+{
+    UIImage *bg = [UIImage imageNamed:@"bg7"];
     UIImage *digits = [UIImage imageNamed:@"Digits"];
     
     [self.view.layer setContents:(__bridge id)bg.CGImage];
@@ -48,13 +65,13 @@
         [weekday setAlpha:0.2];
     }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 
-                                                  target:self
-                                                selector:@selector(tick) 
-                                                userInfo:nil
-                                                 repeats:YES];
-    [self tick];
+//    recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didRecognizePan:)];
+//    [self.view addGestureRecognizer:recognizer];
+//    
+//    [recognizer setMaximumNumberOfTouches:1];
+    
 }
+
 - (void)setDigit:(NSInteger)digit forView:(UIView *)view
 {
     [view.layer setContentsRect:CGRectMake(digit * 1.0f / 11.0f, 0, 1.0f/11.0f, 1.0f)];
@@ -68,9 +85,7 @@
         } else {
             alpha = 0.0f;
         }
-//        [UIView animateWithDuration:1.0f animations:^{
-            [view setAlpha:alpha];
-//        }];
+        [view setAlpha:alpha];
     }
 }
 
@@ -110,18 +125,35 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)changeBG:(id)sender
+//- (IBAction)changeBG:(id)sender
+//{
+//    if (self.index > 8) {
+//        self.index = 0;
+//    } else {
+//        self.index++;
+//    }
+//    NSString *bgName = [NSString stringWithFormat:@"bg%d", self.index];
+//    NSLog(@"bgName : %@", bgName);
+//    UIImage *bg = [UIImage imageNamed:bgName];
+//    [self.view.layer setContents:(__bridge id)bg.CGImage];
+//}
+
+- (IBAction)displayGestureForPanGestureRecognizer:(UIPanGestureRecognizer *)sender
 {
-    if (self.index > 8) {
-        self.index = 0;
-    } else {
-        self.index++;
-    }
-    
-    NSString *bgName = [NSString stringWithFormat:@"bg%d", self.index];
-    NSLog(@"bgName : %@", bgName);
-    UIImage *bg = [UIImage imageNamed:bgName];
-    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    CGPoint thisInterval = [sender translationInView:self.view];
+    NSLog(@"%@", NSStringFromCGPoint(thisInterval));
 }
+
+//- (void)didRecognizePan:(UIPanGestureRecognizer*)sender {
+//    CGPoint thisInterval = [recognizer translationInView:self.view];
+//    NSLog(@"%@", NSStringFromCGPoint(thisInterval));
+//    if (abs(lastRecognizedInterval.x - thisInterval.x) > kMinimumPanDistance ||
+//        abs(lastRecognizedInterval.y - thisInterval.y) > kMinimumPanDistance) {
+//        
+//        lastRecognizedInterval = thisInterval;
+//        
+//        // you would add your method call here
+//    }
+//}
 
 @end

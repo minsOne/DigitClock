@@ -1,0 +1,13 @@
+PODS:
+  - Appirater (2.0.2)
+  - MTLog (0.6.1)
+
+DEPENDENCIES:
+  - Appirater
+  - MTLog
+
+SPEC CHECKSUMS:
+  Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
+  MTLog: 7a8b3f4ab0fcc457428d85a66b731c6e2ef64bce
+
+COCOAPODS: 0.29.0
