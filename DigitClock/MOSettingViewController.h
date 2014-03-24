@@ -11,7 +11,7 @@
 
 @protocol MOSettingViewControllerDelegate <NSObject>
 
-- (void)changeBackground:(NSString *)theme;
+- (void)changeBackground;
 
 @end
 
@@ -19,6 +19,6 @@
 
 @property (weak, nonatomic) id <MOSettingViewControllerDelegate> delegate;
 
--(void)selectedBackground:(NSString *)theme;
+-(void)selectedBackground;
 
 @end

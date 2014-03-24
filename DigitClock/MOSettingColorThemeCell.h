@@ -10,7 +10,7 @@
 
 @protocol MOSettingColorThemeCellDelegate <NSObject>
 
-- (void)selectedBackground:(NSString *)theme;
+- (void)selectedBackground;
 
 @end
 

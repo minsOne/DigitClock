@@ -11,6 +11,6 @@
 
 @interface MOViewController : UIViewController<MOSettingViewControllerDelegate>
 
-- (void)changeBackground:(NSString *)theme;
+- (void)changeBackground;
 
 @end

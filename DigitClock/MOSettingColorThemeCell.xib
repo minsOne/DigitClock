@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dMD-8h-fYQ" customClass="MOSettingColorThemeCell">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="dMD-8h-fYQ" customClass="MOSettingColorThemeCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dMD-8h-fYQ" id="iK0-2w-riB">
@@ -45,12 +45,36 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="NJ0-6F-sSd"/>
                         </connections>
                     </button>
+                    <button opaque="NO" tag="1004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1k-wP-UiK">
+                        <rect key="frame" x="207" y="7" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" image="theme4">
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="w7O-tj-MCa"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1005" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVB-nt-817">
+                        <rect key="frame" x="270" y="7" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" image="theme5">
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="RIf-qA-Mja"/>
+                        </connections>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outletCollection property="themeButtons" destination="KJU-kY-22j" id="MMQ-sg-iaf"/>
                 <outletCollection property="themeButtons" destination="8Up-0l-M6k" id="gNJ-OL-FwE"/>
                 <outletCollection property="themeButtons" destination="Kcc-ft-AqY" id="sjK-fN-XbH"/>
+                <outletCollection property="themeButtons" destination="N1k-wP-UiK" id="21e-qw-iZw"/>
+                <outletCollection property="themeButtons" destination="yVB-nt-817" id="gGJ-8h-df0"/>
             </connections>
         </tableViewCell>
     </objects>
@@ -58,5 +82,7 @@
         <image name="theme1" width="30" height="30"/>
         <image name="theme2" width="30" height="30"/>
         <image name="theme3" width="30" height="30"/>
+        <image name="theme4" width="30" height="30"/>
+        <image name="theme5" width="30" height="30"/>
     </resources>
 </document>

@@ -8,7 +8,7 @@
 
 #import "MOViewController.h"
 #import "MOSettingViewController.h"
-//#import <QuartzCore/QuartzCore.h>
+#import "MOBackgroundColor.h"
 
 @interface MOViewController ()
 
@@ -47,34 +47,50 @@ CGPoint lastRecognizedInterval;
     [self tick];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)setup
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *bgDefault = [defaults stringForKey:@"Theme"];
-    
-    if (bgDefault == nil) {
-        [defaults setObject:@"bg0" forKey:@"Theme"];
-        bgDefault = @"bg0";
-        [defaults synchronize];
-    }
-    
-    UIImage *bg = [UIImage imageNamed:bgDefault];
-    UIImage *digits = [UIImage imageNamed:@"Digits"];
-    
+
+    NSString *bgColorName = [[MOBackgroundColor sharedInstance] bgColorName];
+    UIImage *bg = [UIImage imageNamed:bgColorName];
+
     [self.view.layer setContents:(__bridge id)bg.CGImage];
+    [self initDigitView];
+    [self initColonView];
+    [self initWeekdayLabel];
     
+}
+
+- (void)initDigitView
+{
+    UIImage *digits = [UIImage imageNamed:@"Digits"];
     for (UIView *view in self.digitViews) {
         [view.layer setContents:(__bridge id)digits.CGImage];
         [view.layer setContentsRect:CGRectMake(0, 0, 1.0f/11.0f, 1.0)];
         [view.layer setContentsGravity:kCAGravityResizeAspect];
         [view.layer setMagnificationFilter:kCAFilterNearest];
     }
+}
+
+- (void)initColonView
+{
+    UIImage *digits = [UIImage imageNamed:@"Digits"];
     for (UIView *view in self.colonViews) {
         [view.layer setContents:(__bridge id)digits.CGImage];
         [view.layer setContentsRect:CGRectMake(10.0f/11.0f, 0, 1.0f/11.0f, 1.0)];
         [view.layer setContentsGravity:kCAGravityResizeAspect];
         [view.layer setMagnificationFilter:kCAFilterNearest];
     }
+
+}
+
+- (void)initWeekdayLabel
+{
     for (UILabel *weekday in self.weekdayLabels) {
         [weekday setAlpha:0.2];
     }
@@ -83,18 +99,6 @@ CGPoint lastRecognizedInterval;
 - (void)setDigit:(NSInteger)digit forView:(UIView *)view
 {
     [view.layer setContentsRect:CGRectMake(digit * 1.0f / 11.0f, 0, 1.0f/11.0f, 1.0f)];
-}
-- (void)animateColon
-{
-    for (UIView *view in self.colonViews) {
-        CGFloat alpha = [view alpha];
-        if (alpha == 0.0f) {
-            alpha = 1.0f;
-        } else {
-            alpha = 0.0f;
-        }
-        [view setAlpha:alpha];
-    }
 }
 
 - (void)setWeekday:(NSInteger)weekday
@@ -127,10 +131,17 @@ CGPoint lastRecognizedInterval;
     }];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)animateColon
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    for (UIView *view in self.colonViews) {
+        CGFloat alpha = [view alpha];
+        if (alpha == 0.0f) {
+            alpha = 1.0f;
+        } else {
+            alpha = 0.0f;
+        }
+        [view setAlpha:alpha];
+    }
 }
 
 - (IBAction)displayGestureForPanGestureRecognizer:(UIPanGestureRecognizer *)sender
@@ -156,8 +167,6 @@ CGPoint lastRecognizedInterval;
         default:
             break;
     }
-    
-    
 }
 
 - (void)changeViewAlpha:(CGPoint)translation
@@ -170,18 +179,7 @@ CGPoint lastRecognizedInterval;
     } else if ( self.lastTranslation.y < translation.y && alpha >= 0.02f ) {
         [self.view setAlpha:alpha - 0.01f];
     }
-    
     self.lastTranslation = translation;
-}
-
-- (IBAction)showSettingView:(id)sender
-{
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -190,15 +188,23 @@ CGPoint lastRecognizedInterval;
     destViewController.delegate = self;
 }
 
-- (void)changeBackground:(NSString *)theme
+- (void)changeBackground
 {
-    NSLog(@"ChangeBackground Theme : %@", theme);
-    UIImage *bg = [UIImage imageNamed:theme];
-    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
     
+    NSLog(@"ChangeBackground Theme : %@ %d", bgName, [[MOBackgroundColor sharedInstance]bgColorIndex]);
+    
+    UIImage *bg = [UIImage imageNamed:bgName];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:theme forKey:@"Theme"];
+    [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
     [defaults synchronize];
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;    
 }
 
 @end

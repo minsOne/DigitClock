@@ -10,6 +10,12 @@
 		2B6FC9C759264B2B91F457F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85C7E8962564492BA15E09B9 /* libPods.a */; };
 		7F6401FD18DF621D00DF677A /* MOSettingColorThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6401FC18DF621D00DF677A /* MOSettingColorThemeCell.m */; };
 		7F6401FF18DF626500DF677A /* MOSettingColorThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6401FE18DF626500DF677A /* MOSettingColorThemeCell.xib */; };
+		7F8D98AD18DFF6790097C4C9 /* MONavigationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D98AC18DFF6790097C4C9 /* MONavigationSettingViewController.m */; };
+		7F8D98B018E0936A0097C4C9 /* MOBackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D98AF18E0936A0097C4C9 /* MOBackgroundColor.m */; };
+		7F8D98B418E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D98B218E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m */; };
+		7F8D98B518E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */; };
+		7F8D98B918E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */; };
+		7F8D98BA18E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */; };
 		7FE3247518DF4445006AAE3B /* MOSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3247418DF4445006AAE3B /* MOSettingViewController.m */; };
 		7FE7C8D818DB18A8001B8C5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D718DB18A8001B8C5D /* Foundation.framework */; };
 		7FE7C8DA18DB18A8001B8C5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D918DB18A8001B8C5D /* CoreGraphics.framework */; };
@@ -42,6 +48,16 @@
 		7F6401FB18DF621D00DF677A /* MOSettingColorThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingColorThemeCell.h; sourceTree = "<group>"; };
 		7F6401FC18DF621D00DF677A /* MOSettingColorThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingColorThemeCell.m; sourceTree = "<group>"; };
 		7F6401FE18DF626500DF677A /* MOSettingColorThemeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOSettingColorThemeCell.xib; sourceTree = "<group>"; };
+		7F8D98AB18DFF6790097C4C9 /* MONavigationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MONavigationSettingViewController.h; sourceTree = "<group>"; };
+		7F8D98AC18DFF6790097C4C9 /* MONavigationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MONavigationSettingViewController.m; sourceTree = "<group>"; };
+		7F8D98AE18E0936A0097C4C9 /* MOBackgroundColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOBackgroundColor.h; sourceTree = "<group>"; };
+		7F8D98AF18E0936A0097C4C9 /* MOBackgroundColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOBackgroundColor.m; sourceTree = "<group>"; };
+		7F8D98B118E0A8E90097C4C9 /* MOSettingMakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingMakerTableViewCell.h; sourceTree = "<group>"; };
+		7F8D98B218E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingMakerTableViewCell.m; sourceTree = "<group>"; };
+		7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOSettingMakerTableViewCell.xib; sourceTree = "<group>"; };
+		7F8D98B618E0B0A40097C4C9 /* MOSettingVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingVersionTableViewCell.h; sourceTree = "<group>"; };
+		7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingVersionTableViewCell.m; sourceTree = "<group>"; };
+		7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOSettingVersionTableViewCell.xib; sourceTree = "<group>"; };
 		7FE3247318DF4445006AAE3B /* MOSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingViewController.h; sourceTree = "<group>"; };
 		7FE3247418DF4445006AAE3B /* MOSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingViewController.m; sourceTree = "<group>"; };
 		7FE7C8D418DB18A8001B8C5D /* DigitClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +156,16 @@
 				7F6401FB18DF621D00DF677A /* MOSettingColorThemeCell.h */,
 				7F6401FC18DF621D00DF677A /* MOSettingColorThemeCell.m */,
 				7F6401FE18DF626500DF677A /* MOSettingColorThemeCell.xib */,
+				7F8D98AB18DFF6790097C4C9 /* MONavigationSettingViewController.h */,
+				7F8D98AC18DFF6790097C4C9 /* MONavigationSettingViewController.m */,
+				7F8D98AE18E0936A0097C4C9 /* MOBackgroundColor.h */,
+				7F8D98AF18E0936A0097C4C9 /* MOBackgroundColor.m */,
+				7F8D98B118E0A8E90097C4C9 /* MOSettingMakerTableViewCell.h */,
+				7F8D98B218E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m */,
+				7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */,
+				7F8D98B618E0B0A40097C4C9 /* MOSettingVersionTableViewCell.h */,
+				7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */,
+				7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */,
 			);
 			path = DigitClock;
 			sourceTree = "<group>";
@@ -253,7 +279,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6401FF18DF626500DF677A /* MOSettingColorThemeCell.xib in Resources */,
+				7F8D98BA18E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib in Resources */,
 				7FE7C8F018DB18A8001B8C5D /* Images.xcassets in Resources */,
+				7F8D98B518E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib in Resources */,
 				7FE7C8E218DB18A8001B8C5D /* InfoPlist.strings in Resources */,
 				7FE7C8EB18DB18A8001B8C5D /* Main.storyboard in Resources */,
 			);
@@ -310,8 +338,12 @@
 				7FE7C8E818DB18A8001B8C5D /* MOAppDelegate.m in Sources */,
 				7F6401FD18DF621D00DF677A /* MOSettingColorThemeCell.m in Sources */,
 				7FE3247518DF4445006AAE3B /* MOSettingViewController.m in Sources */,
+				7F8D98AD18DFF6790097C4C9 /* MONavigationSettingViewController.m in Sources */,
 				7FE7C8EE18DB18A8001B8C5D /* MOViewController.m in Sources */,
+				7F8D98B918E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m in Sources */,
+				7F8D98B418E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m in Sources */,
 				7FE7C8E418DB18A8001B8C5D /* main.m in Sources */,
+				7F8D98B018E0936A0097C4C9 /* MOBackgroundColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

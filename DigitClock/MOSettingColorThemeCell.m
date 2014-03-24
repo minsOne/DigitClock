@@ -7,6 +7,7 @@
 //
 
 #import "MOSettingColorThemeCell.h"
+#import "MOBackgroundColor.h"
 
 @interface MOSettingColorThemeCell ()
 
@@ -25,41 +26,55 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
-}
-
 - (void)setRoundedButton
 {
+    NSInteger cnt = 0;
+    NSInteger selectedColorIndex = [[MOBackgroundColor sharedInstance] bgColorIndex];
+    
     for (UIButton *button in self.themeButtons) {
         [button.layer setCornerRadius:15.0f];
         [button.layer setMasksToBounds:YES];
+        if (cnt++ == selectedColorIndex) {
+            [button setAlpha:0.8f];
+            
+        } else {
+            [button setAlpha:1.0f];
+        }
     }
 }
 
 - (IBAction)selectBackground:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    NSString *selectedTheme = nil;
     switch (button.tag) {
         case 1001:
-            selectedTheme = @"bg0";
+            [[MOBackgroundColor sharedInstance] setBgColorIndex:0];
             break;
         case 1002:
-            selectedTheme = @"bg1";
+            [[MOBackgroundColor sharedInstance] setBgColorIndex:1];
             break;
         case 1003:
-            selectedTheme = @"bg2";
+            [[MOBackgroundColor sharedInstance] setBgColorIndex:2];
+            break;
+        case 1004:
+            [[MOBackgroundColor sharedInstance] setBgColorIndex:3];
+            break;
+        case 1005:
+            [[MOBackgroundColor sharedInstance] setBgColorIndex:4];
             break;
         default:
             break;
     }
-    if ([self.delegate respondsToSelector:@selector(selectedBackground:)]) {
-        [self.delegate selectedBackground:selectedTheme];
+    
+    
+    NSString *bgName = [NSString stringWithFormat:@"bg%d", [[MOBackgroundColor sharedInstance]bgColorIndex]];
+    [[MOBackgroundColor sharedInstance]setBgColorName:bgName];
+    
+    if ([self.delegate respondsToSelector:@selector(selectedBackground)]) {
+        [self.delegate selectedBackground];
     }
+    
+    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
 
 }
 
