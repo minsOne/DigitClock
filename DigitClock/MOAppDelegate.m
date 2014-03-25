@@ -8,6 +8,8 @@
 
 #import "MOAppDelegate.h"
 #import "MTLog.h"
+#import "Appirater.h"
+#import "GAI.h"
 
 @interface MOAppDelegate ()
 
@@ -23,6 +25,27 @@
 
     // disable the idle timer
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+
+    [Appirater setAppId:appstoreID];
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
+
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-XXXX-Y"];
+    
     return YES;
 }
 

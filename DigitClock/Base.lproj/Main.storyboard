@@ -21,42 +21,42 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-EK-7fG" userLabel="Hour1">
-                                        <rect key="frame" x="12" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="-8" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F6f-2Q-kU1" userLabel="Hour2">
-                                        <rect key="frame" x="70" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="55" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-sx-TR3" userLabel="Colon1">
-                                        <rect key="frame" x="128" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="118" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-Hz-cpj" userLabel="Minute1">
-                                        <rect key="frame" x="186" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="181" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zPN-KC-SZL" userLabel="Minute2">
-                                        <rect key="frame" x="244" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="244" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19A-Ow-Z8D" userLabel="Colon2">
-                                        <rect key="frame" x="302" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="307" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rdv-sQ-s9a" userLabel="Second1">
-                                        <rect key="frame" x="360" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="370" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrK-m1-OWu" userLabel="Second2">
-                                        <rect key="frame" x="418" y="110" width="50" height="100"/>
+                                        <rect key="frame" x="433" y="105" width="55" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -126,7 +126,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal">
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="Vaj-5P-hm6" kind="modal" id="nE0-dQ-5NS"/>
@@ -144,7 +144,6 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="settingButton" destination="Swj-tA-OJJ" id="MIX-Bt-XFs"/>
                         <outletCollection property="digitViews" destination="kQF-EK-7fG" id="ES5-HU-veD"/>
                         <outletCollection property="digitViews" destination="F6f-2Q-kU1" id="Wtb-ed-v8a"/>
                         <outletCollection property="digitViews" destination="XAg-Hz-cpj" id="9qO-0v-eFZ"/>

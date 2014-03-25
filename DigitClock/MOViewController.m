@@ -10,27 +10,17 @@
 #import "MOSettingViewController.h"
 #import "MOBackgroundColor.h"
 
-@interface MOViewController ()
+@interface MOViewController () {
+    NSTimer *timer;
+    CGPoint lastTranslation;
+}
 
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *digitViews;
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *colonViews;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *weekdayLabels;
-
-@property (nonatomic, weak) IBOutlet UIButton *settingButton;
-
-@property (nonatomic, weak) NSTimer *timer;
-@property (nonatomic) NSInteger index;
-
-@property (nonatomic) CGPoint lastTranslation;
-
 @end
 
 @implementation MOViewController
-
-#define kMinimumPanDistance 5.0f
-
-UIPanGestureRecognizer *recognizer;
-CGPoint lastRecognizedInterval;
 
 - (void)viewDidLoad
 {
@@ -39,7 +29,7 @@ CGPoint lastRecognizedInterval;
     
     [self setup];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                   target:self
                                                 selector:@selector(tick)
                                                 userInfo:nil
@@ -53,6 +43,11 @@ CGPoint lastRecognizedInterval;
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Initialize Digit Clock
+/**
+ *  initial Digit Clock
+ */
 - (void)setup
 {
 
@@ -66,6 +61,9 @@ CGPoint lastRecognizedInterval;
     
 }
 
+/**
+ *  initial DigitView
+ */
 - (void)initDigitView
 {
     UIImage *digits = [UIImage imageNamed:@"Digits"];
@@ -77,6 +75,9 @@ CGPoint lastRecognizedInterval;
     }
 }
 
+/**
+ *  initial ColonView
+ */
 - (void)initColonView
 {
     UIImage *digits = [UIImage imageNamed:@"Digits"];
@@ -89,6 +90,9 @@ CGPoint lastRecognizedInterval;
 
 }
 
+/**
+ *  initial WeekdayLabel
+ */
 - (void)initWeekdayLabel
 {
     for (UILabel *weekday in self.weekdayLabels) {
@@ -96,11 +100,24 @@ CGPoint lastRecognizedInterval;
     }
 }
 
+#pragma mark - Set Digit Clock View
+
+/**
+ *  Set Digit Number
+ *
+ *  @param digit Time Number
+ *  @param view  showing View
+ */
 - (void)setDigit:(NSInteger)digit forView:(UIView *)view
 {
     [view.layer setContentsRect:CGRectMake(digit * 1.0f / 11.0f, 0, 1.0f/11.0f, 1.0f)];
 }
 
+/**
+ *  Set Weekday
+ *
+ *  @param weekday Weekday
+ */
 - (void)setWeekday:(NSInteger)weekday
 {
     for (UILabel *weekdayLabel in self.weekdayLabels) {
@@ -112,6 +129,25 @@ CGPoint lastRecognizedInterval;
     }
 }
 
+/**
+ * Set Colon
+ */
+- (void)setColon
+{
+    for (UIView *view in self.colonViews) {
+        CGFloat alpha = [view alpha];
+        if (alpha == 0.0f) {
+            alpha = 1.0f;
+        } else {
+            alpha = 0.0f;
+        }
+        [view setAlpha:alpha];
+    }
+}
+
+/**
+ *  operating Digit Clock
+ */
 - (void)tick
 {
     NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
@@ -126,24 +162,15 @@ CGPoint lastRecognizedInterval;
         [self setDigit:components.minute % 10 forView:self.digitViews[3]];
         [self setDigit:components.second / 10 forView:self.digitViews[4]];
         [self setDigit:components.second % 10 forView:self.digitViews[5]];
-        [self animateColon];
+        [self setColon];
         [self setWeekday:components.weekday];
     }];
 }
-
-- (void)animateColon
-{
-    for (UIView *view in self.colonViews) {
-        CGFloat alpha = [view alpha];
-        if (alpha == 0.0f) {
-            alpha = 1.0f;
-        } else {
-            alpha = 0.0f;
-        }
-        [view setAlpha:alpha];
-    }
-}
-
+/**
+ *  display View Gesture
+ *
+ *  @param sender PanGesture Object
+ */
 - (IBAction)displayGestureForPanGestureRecognizer:(UIPanGestureRecognizer *)sender
 {
     CGPoint translation = [sender translationInView:self.view];
@@ -151,7 +178,7 @@ CGPoint lastRecognizedInterval;
     
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
-            self.lastTranslation = translation;
+            lastTranslation = translation;
             break;
         case UIGestureRecognizerStateCancelled:
             break;
@@ -168,19 +195,39 @@ CGPoint lastRecognizedInterval;
             break;
     }
 }
-
+/**
+ *  change View Alpha from up down gesture
+ *
+ *  @param translation gesture Point
+ */
 - (void)changeViewAlpha:(CGPoint)translation
 {
     CGFloat alpha = [self.view alpha];
     NSLog(@"View Alpha : %f", alpha);
     
-    if ( self.lastTranslation.y > translation.y && alpha < 1.0f ) {
+    if ( lastTranslation.y > translation.y && alpha < 1.0f ) {
         [self.view setAlpha:alpha + 0.01f];
-    } else if ( self.lastTranslation.y < translation.y && alpha >= 0.02f ) {
+    } else if ( lastTranslation.y < translation.y && alpha >= 0.02f ) {
         [self.view setAlpha:alpha - 0.01f];
     }
-    self.lastTranslation = translation;
+    lastTranslation = translation;
 }
+
+/**
+ *  chagne Background from MOBackgroundColor Instance
+ */
+- (void)changeBackground
+{
+    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
+    
+    UIImage *bg = [UIImage imageNamed:bgName];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
+    [defaults synchronize];
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -188,19 +235,6 @@ CGPoint lastRecognizedInterval;
     destViewController.delegate = self;
 }
 
-- (void)changeBackground
-{
-    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
-    
-    NSLog(@"ChangeBackground Theme : %@ %d", bgName, [[MOBackgroundColor sharedInstance]bgColorIndex]);
-    
-    UIImage *bg = [UIImage imageNamed:bgName];
-    [self.view.layer setContents:(__bridge id)bg.CGImage];
-
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
-    [defaults synchronize];
-}
 
 - (NSUInteger)supportedInterfaceOrientations
 {

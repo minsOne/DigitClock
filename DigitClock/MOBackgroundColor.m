@@ -32,7 +32,7 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         self.bgColorIndex = [defaults integerForKey:@"Theme"] ;
         
-        if( self.bgColorIndex == nil ) {
+        if( self.bgColorIndex ) {
             [defaults setInteger:0 forKey:@"Theme"];
             [defaults synchronize];
             self.bgColorName = [NSString stringWithFormat:@"bg%d", self.bgColorIndex];
@@ -40,7 +40,6 @@
         } else {
             self.bgColorName = [NSString stringWithFormat:@"bg%d", self.bgColorIndex];
         }
-        NSLog(@"bgColorName : %@\nIndex : %d", self.bgColorName, self.bgColorIndex);
     }
     return self;
 }

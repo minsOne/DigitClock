@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MOSettingViewController.h"
+#import "GAITrackedViewController.h"
 
 @interface MOViewController : UIViewController<MOSettingViewControllerDelegate>
 

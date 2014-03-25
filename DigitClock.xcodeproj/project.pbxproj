@@ -16,6 +16,11 @@
 		7F8D98B518E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */; };
 		7F8D98B918E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */; };
 		7F8D98BA18E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */; };
+		7FC6E50418E13A7200213727 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50318E13A7200213727 /* libGoogleAnalyticsServices.a */; };
+		7FC6E50618E13A9200213727 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50518E13A9200213727 /* CoreData.framework */; };
+		7FC6E50818E13A9A00213727 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50718E13A9A00213727 /* AdSupport.framework */; };
+		7FC6E50A18E13AA800213727 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50918E13AA800213727 /* SystemConfiguration.framework */; };
+		7FC6E50C18E13AB700213727 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50B18E13AB700213727 /* libz.dylib */; };
 		7FE3247518DF4445006AAE3B /* MOSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3247418DF4445006AAE3B /* MOSettingViewController.m */; };
 		7FE7C8D818DB18A8001B8C5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D718DB18A8001B8C5D /* Foundation.framework */; };
 		7FE7C8DA18DB18A8001B8C5D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8D918DB18A8001B8C5D /* CoreGraphics.framework */; };
@@ -58,6 +63,17 @@
 		7F8D98B618E0B0A40097C4C9 /* MOSettingVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingVersionTableViewCell.h; sourceTree = "<group>"; };
 		7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingVersionTableViewCell.m; sourceTree = "<group>"; };
 		7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOSettingVersionTableViewCell.xib; sourceTree = "<group>"; };
+		7FC6E4FD18E13A6400213727 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		7FC6E4FE18E13A6400213727 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		7FC6E4FF18E13A6400213727 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		7FC6E50018E13A6400213727 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		7FC6E50118E13A6400213727 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		7FC6E50218E13A6400213727 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		7FC6E50318E13A7200213727 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		7FC6E50518E13A9200213727 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7FC6E50718E13A9A00213727 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		7FC6E50918E13AA800213727 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7FC6E50B18E13AB700213727 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		7FE3247318DF4445006AAE3B /* MOSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingViewController.h; sourceTree = "<group>"; };
 		7FE3247418DF4445006AAE3B /* MOSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingViewController.m; sourceTree = "<group>"; };
 		7FE7C8D418DB18A8001B8C5D /* DigitClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,9 +104,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC6E50C18E13AB700213727 /* libz.dylib in Frameworks */,
+				7FC6E50A18E13AA800213727 /* SystemConfiguration.framework in Frameworks */,
+				7FC6E50818E13A9A00213727 /* AdSupport.framework in Frameworks */,
+				7FC6E50618E13A9200213727 /* CoreData.framework in Frameworks */,
 				7FE7C8DA18DB18A8001B8C5D /* CoreGraphics.framework in Frameworks */,
 				7FE7C8DC18DB18A8001B8C5D /* UIKit.framework in Frameworks */,
 				7FE7C8D818DB18A8001B8C5D /* Foundation.framework in Frameworks */,
+				7FC6E50418E13A7200213727 /* libGoogleAnalyticsServices.a in Frameworks */,
 				2B6FC9C759264B2B91F457F9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +129,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F8D98BB18E100F90097C4C9 /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F6401FB18DF621D00DF677A /* MOSettingColorThemeCell.h */,
+				7F6401FC18DF621D00DF677A /* MOSettingColorThemeCell.m */,
+				7F6401FE18DF626500DF677A /* MOSettingColorThemeCell.xib */,
+				7F8D98B118E0A8E90097C4C9 /* MOSettingMakerTableViewCell.h */,
+				7F8D98B218E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m */,
+				7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */,
+				7F8D98B618E0B0A40097C4C9 /* MOSettingVersionTableViewCell.h */,
+				7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */,
+				7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */,
+			);
+			name = SettingCell;
+			sourceTree = "<group>";
+		};
+		7F8D98BC18E1010F0097C4C9 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				7F8D98BB18E100F90097C4C9 /* SettingCell */,
+				7FE3247318DF4445006AAE3B /* MOSettingViewController.h */,
+				7FE3247418DF4445006AAE3B /* MOSettingViewController.m */,
+				7F8D98AB18DFF6790097C4C9 /* MONavigationSettingViewController.h */,
+				7F8D98AC18DFF6790097C4C9 /* MONavigationSettingViewController.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		7F8D98BD18E1013D0097C4C9 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				7F8D98AE18E0936A0097C4C9 /* MOBackgroundColor.h */,
+				7F8D98AF18E0936A0097C4C9 /* MOBackgroundColor.m */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		7FC6E4FC18E13A1E00213727 /* Google Analytics Library */ = {
+			isa = PBXGroup;
+			children = (
+				7FC6E50318E13A7200213727 /* libGoogleAnalyticsServices.a */,
+				7FC6E4FD18E13A6400213727 /* GAI.h */,
+				7FC6E4FE18E13A6400213727 /* GAIDictionaryBuilder.h */,
+				7FC6E4FF18E13A6400213727 /* GAIFields.h */,
+				7FC6E50018E13A6400213727 /* GAILogger.h */,
+				7FC6E50118E13A6400213727 /* GAITrackedViewController.h */,
+				7FC6E50218E13A6400213727 /* GAITracker.h */,
+			);
+			name = "Google Analytics Library";
+			sourceTree = "<group>";
+		};
 		7FE7C8CB18DB18A8001B8C5D = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +203,10 @@
 		7FE7C8D618DB18A8001B8C5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FC6E50B18E13AB700213727 /* libz.dylib */,
+				7FC6E50918E13AA800213727 /* SystemConfiguration.framework */,
+				7FC6E50718E13A9A00213727 /* AdSupport.framework */,
+				7FC6E50518E13A9200213727 /* CoreData.framework */,
 				7F39563F18DB264300C963C9 /* QuartzCore.framework */,
 				7FE7C8D718DB18A8001B8C5D /* Foundation.framework */,
 				7FE7C8D918DB18A8001B8C5D /* CoreGraphics.framework */,
@@ -144,6 +220,9 @@
 		7FE7C8DD18DB18A8001B8C5D /* DigitClock */ = {
 			isa = PBXGroup;
 			children = (
+				7F8D98BC18E1010F0097C4C9 /* Setting */,
+				7F8D98BD18E1013D0097C4C9 /* Color */,
+				7FC6E4FC18E13A1E00213727 /* Google Analytics Library */,
 				7FE7C8E618DB18A8001B8C5D /* MOAppDelegate.h */,
 				7FE7C8E718DB18A8001B8C5D /* MOAppDelegate.m */,
 				7FE7C8E918DB18A8001B8C5D /* Main.storyboard */,
@@ -151,21 +230,6 @@
 				7FE7C8ED18DB18A8001B8C5D /* MOViewController.m */,
 				7FE7C8EF18DB18A8001B8C5D /* Images.xcassets */,
 				7FE7C8DE18DB18A8001B8C5D /* Supporting Files */,
-				7FE3247318DF4445006AAE3B /* MOSettingViewController.h */,
-				7FE3247418DF4445006AAE3B /* MOSettingViewController.m */,
-				7F6401FB18DF621D00DF677A /* MOSettingColorThemeCell.h */,
-				7F6401FC18DF621D00DF677A /* MOSettingColorThemeCell.m */,
-				7F6401FE18DF626500DF677A /* MOSettingColorThemeCell.xib */,
-				7F8D98AB18DFF6790097C4C9 /* MONavigationSettingViewController.h */,
-				7F8D98AC18DFF6790097C4C9 /* MONavigationSettingViewController.m */,
-				7F8D98AE18E0936A0097C4C9 /* MOBackgroundColor.h */,
-				7F8D98AF18E0936A0097C4C9 /* MOBackgroundColor.m */,
-				7F8D98B118E0A8E90097C4C9 /* MOSettingMakerTableViewCell.h */,
-				7F8D98B218E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m */,
-				7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */,
-				7F8D98B618E0B0A40097C4C9 /* MOSettingVersionTableViewCell.h */,
-				7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */,
-				7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */,
 			);
 			path = DigitClock;
 			sourceTree = "<group>";
@@ -474,6 +538,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
 				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DigitClock",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -488,6 +556,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
 				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DigitClock",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
