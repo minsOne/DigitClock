@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" tag="1001" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJU-kY-22j">
+                    <button opaque="NO" tag="1001" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJU-kY-22j">
                         <rect key="frame" x="20" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="theme1">
@@ -23,8 +23,8 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="Ovv-sR-Z7D"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="1002" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Up-0l-M6k">
-                        <rect key="frame" x="82" y="7" width="30" height="30"/>
+                    <button opaque="NO" tag="1002" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Up-0l-M6k">
+                        <rect key="frame" x="78" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" image="theme2">
@@ -34,8 +34,8 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="61r-qV-B5b"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="1003" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-ft-AqY">
-                        <rect key="frame" x="145" y="7" width="30" height="30"/>
+                    <button opaque="NO" tag="1003" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-ft-AqY">
+                        <rect key="frame" x="136" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" image="theme3">
@@ -45,8 +45,8 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="NJ0-6F-sSd"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="1004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1k-wP-UiK">
-                        <rect key="frame" x="207" y="7" width="30" height="30"/>
+                    <button opaque="NO" tag="1004" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N1k-wP-UiK">
+                        <rect key="frame" x="194" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" image="theme4">
@@ -56,8 +56,8 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="w7O-tj-MCa"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="1005" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVB-nt-817">
-                        <rect key="frame" x="270" y="7" width="30" height="30"/>
+                    <button opaque="NO" tag="1005" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVB-nt-817">
+                        <rect key="frame" x="252" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" image="theme5">
@@ -67,8 +67,8 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="RIf-qA-Mja"/>
                         </connections>
                     </button>
-                    <button opaque="NO" tag="1006" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2E-DX-dEl">
-                        <rect key="frame" x="334" y="7" width="30" height="30"/>
+                    <button opaque="NO" tag="1006" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2E-DX-dEl">
+                        <rect key="frame" x="310" y="7" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" image="theme6">
@@ -78,13 +78,38 @@
                             <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="UZ5-vU-qeP"/>
                         </connections>
                     </button>
+                    <button opaque="NO" tag="1007" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bg-lx-9Xt">
+                        <rect key="frame" x="368" y="7" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" image="theme7">
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="FaC-4b-ict"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" tag="1008" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAn-0W-Osh">
+                        <rect key="frame" x="426" y="7" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" image="theme8">
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectBackground:" destination="dMD-8h-fYQ" eventType="touchUpInside" id="Nf1-0w-XL6"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yVB-nt-817" firstAttribute="leading" secondItem="N1k-wP-UiK" secondAttribute="trailing" constant="35" id="0hf-A2-aBc"/>
-                    <constraint firstItem="A2E-DX-dEl" firstAttribute="leading" secondItem="yVB-nt-817" secondAttribute="trailing" constant="34" id="8bx-1Z-4O2"/>
-                    <constraint firstItem="N1k-wP-UiK" firstAttribute="leading" secondItem="Kcc-ft-AqY" secondAttribute="trailing" constant="35" id="Dpb-jI-aFc"/>
-                    <constraint firstItem="8Up-0l-M6k" firstAttribute="leading" secondItem="KJU-kY-22j" secondAttribute="trailing" constant="35" id="hjQ-t9-2nD"/>
-                    <constraint firstItem="Kcc-ft-AqY" firstAttribute="leading" secondItem="8Up-0l-M6k" secondAttribute="trailing" constant="33" id="nIs-yu-Cxc"/>
+                    <constraint firstItem="yVB-nt-817" firstAttribute="leading" secondItem="N1k-wP-UiK" secondAttribute="trailing" constant="28" id="0hf-A2-aBc"/>
+                    <constraint firstItem="A2E-DX-dEl" firstAttribute="leading" secondItem="yVB-nt-817" secondAttribute="trailing" constant="28" id="8bx-1Z-4O2"/>
+                    <constraint firstItem="N1k-wP-UiK" firstAttribute="leading" secondItem="Kcc-ft-AqY" secondAttribute="trailing" constant="28" id="Dpb-jI-aFc"/>
+                    <constraint firstItem="KJU-kY-22j" firstAttribute="leading" secondItem="iK0-2w-riB" secondAttribute="leading" constant="20" id="cT5-bT-LpA"/>
+                    <constraint firstItem="MAn-0W-Osh" firstAttribute="leading" secondItem="1bg-lx-9Xt" secondAttribute="trailing" constant="28" id="d3E-J1-169"/>
+                    <constraint firstItem="8Up-0l-M6k" firstAttribute="leading" secondItem="KJU-kY-22j" secondAttribute="trailing" constant="28" id="hjQ-t9-2nD"/>
+                    <constraint firstItem="Kcc-ft-AqY" firstAttribute="leading" secondItem="8Up-0l-M6k" secondAttribute="trailing" constant="28" id="nIs-yu-Cxc"/>
+                    <constraint firstItem="1bg-lx-9Xt" firstAttribute="leading" secondItem="A2E-DX-dEl" secondAttribute="trailing" constant="28" id="w0i-GB-6Ws"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -94,6 +119,8 @@
                 <outletCollection property="themeButtons" destination="N1k-wP-UiK" id="21e-qw-iZw"/>
                 <outletCollection property="themeButtons" destination="yVB-nt-817" id="gGJ-8h-df0"/>
                 <outletCollection property="themeButtons" destination="A2E-DX-dEl" id="ic0-zf-EHc"/>
+                <outletCollection property="themeButtons" destination="1bg-lx-9Xt" id="83j-qB-EvH"/>
+                <outletCollection property="themeButtons" destination="MAn-0W-Osh" id="cK5-Kb-dr8"/>
             </connections>
         </tableViewCell>
     </objects>
@@ -104,5 +131,7 @@
         <image name="theme4" width="30" height="30"/>
         <image name="theme5" width="30" height="30"/>
         <image name="theme6" width="30" height="30"/>
+        <image name="theme7" width="30" height="30"/>
+        <image name="theme8" width="30" height="30"/>
     </resources>
 </document>

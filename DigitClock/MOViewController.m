@@ -16,6 +16,7 @@
 
 @interface MOViewController () {
     NSTimer *timer;
+    NSTimer *keepAliveTimer;
     CGPoint lastTranslation;
 }
 
@@ -38,13 +39,21 @@
                                                 selector:@selector(tick)
                                                 userInfo:nil
                                                  repeats:YES];
+    
+    keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KeepAliveTime
+                                                      target:self 
+                                                    selector:@selector(sendKeepAlive) 
+                                                    userInfo:nil
+                                                     repeats:YES];
+    
     [self tick];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.screenName = MODigitViewName;
+//    self.screenName = MODigitViewName;
+    self.screenName = [[MOBackgroundColor sharedInstance]bgColorName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -249,6 +258,18 @@
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Theme" 
                                                           action:@"chageBackground"
                                                            label:bgName
+                                                           value:nil]
+                   build]];
+}
+
+- (void)sendKeepAlive
+{
+    NSLog(@"%s", __FUNCTION__);
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"app"
+                                                          action:@"keepAlive"
+                                                           label:nil
                                                            value:nil]
                    build]];
 }

@@ -18,3 +18,8 @@
 #define appstoreID @"770699556"
 #define MODigitViewName @"DigitView"
 #define MOSettingViewName @"SettingViewName"
+#define GATrackerID @"UA-40784576-4"
+
+#define KeepAliveTime 300.0f
+
+#define DEBUG true
