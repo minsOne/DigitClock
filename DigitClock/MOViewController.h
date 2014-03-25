@@ -10,7 +10,7 @@
 #import "MOSettingViewController.h"
 #import "GAITrackedViewController.h"
 
-@interface MOViewController : UIViewController<MOSettingViewControllerDelegate>
+@interface MOViewController : GAITrackedViewController<MOSettingViewControllerDelegate>
 
 - (void)changeBackground;
 

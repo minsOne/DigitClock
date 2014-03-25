@@ -62,6 +62,9 @@
         case 1005:
             [[MOBackgroundColor sharedInstance] setBgColorIndex:4];
             break;
+        case 1006:
+            [[MOBackgroundColor sharedInstance] setBgColorIndex:5];
+            break;
         default:
             break;
     }

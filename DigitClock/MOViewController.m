@@ -10,6 +10,10 @@
 #import "MOSettingViewController.h"
 #import "MOBackgroundColor.h"
 
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
+
 @interface MOViewController () {
     NSTimer *timer;
     CGPoint lastTranslation;
@@ -37,6 +41,12 @@
     [self tick];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.screenName = MODigitViewName;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -51,10 +61,11 @@
 - (void)setup
 {
 
-    NSString *bgColorName = [[MOBackgroundColor sharedInstance] bgColorName];
-    UIImage *bg = [UIImage imageNamed:bgColorName];
-
-    [self.view.layer setContents:(__bridge id)bg.CGImage];
+//    NSString *bgColorName = [[MOBackgroundColor sharedInstance] bgColorName];
+//    UIImage *bg = [UIImage imageNamed:bgColorName];
+//
+//    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    [self changeBackground];
     [self initDigitView];
     [self initColonView];
     [self initWeekdayLabel];
@@ -226,7 +237,22 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
     [defaults synchronize];
+    
+    [self sendGA:bgName];
 }
+
+- (void)sendGA:(NSString *)bgName
+{
+    NSLog(@"%s", __FUNCTION__);
+    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Theme" 
+                                                          action:@"chageBackground"
+                                                           label:bgName
+                                                           value:nil]
+                   build]];
+}
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
