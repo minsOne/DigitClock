@@ -1,0 +1,27 @@
+
+/* Class = "IBUILabel"; text = "SUN"; ObjectID = "2u9-Lf-NHS"; */
+"2u9-Lf-NHS.text" = "SUN";
+
+/* Class = "IBUILabel"; text = "TUE"; ObjectID = "3y7-dA-Ita"; */
+"3y7-dA-Ita.text" = "TUE";
+
+/* Class = "IBUILabel"; text = "SAT"; ObjectID = "4gt-we-izU"; */
+"4gt-we-izU.text" = "SAT";
+
+/* Class = "IBUILabel"; text = "FRI"; ObjectID = "7eY-rm-Qfw"; */
+"7eY-rm-Qfw.text" = "FRI";
+
+/* Class = "IBUILabel"; text = "WEN"; ObjectID = "ItE-ZL-fc6"; */
+"ItE-ZL-fc6.text" = "WEN";
+
+/* Class = "IBUILabel"; text = "THU"; ObjectID = "TyY-Ei-Che"; */
+"TyY-Ei-Che.text" = "THU";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "XoC-bz-amH"; */
+"XoC-bz-amH.title" = "Root View Controller";
+
+/* Class = "IBUILabel"; text = "MON"; ObjectID = "o19-3g-W0N"; */
+"o19-3g-W0N.text" = "MON";
+
+/* Class = "IBUIViewController"; title = "MainView"; ObjectID = "vXZ-lx-hvc"; */
+"vXZ-lx-hvc.title" = "MainView";

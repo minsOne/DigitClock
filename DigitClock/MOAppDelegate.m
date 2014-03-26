@@ -25,29 +25,10 @@
 
     // disable the idle timer
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+    
+    [self initAppReview];
+    [self initGAI];
 
-    [Appirater setAppId:appstoreID];
-    [Appirater setDaysUntilPrompt:7];
-    [Appirater setUsesUntilPrompt:5];
-    [Appirater setSignificantEventsUntilPrompt:-1];
-    [Appirater setTimeBeforeReminding:2];
-    [Appirater setDebug:NO];
-    [Appirater appLaunched:YES];
-
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Optional: set Logger to VERBOSE for debug information.
-#ifdef DEBUG
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-#endif
-    
-    // Initialize tracker.
-    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:GATrackerID];
-    
     return YES;
 }
 
@@ -78,5 +59,36 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)initAppReview
+{
+    [Appirater setAppId:appstoreID];
+    [Appirater setDaysUntilPrompt:7];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+#ifdef DEBUG
+    [Appirater setDebug:YES];
+#else
+    [Appirater setDebug:NO];
+#endif
+    [Appirater appLaunched:YES];
+}
+
+- (void)initGAI
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+#ifdef DEBUG
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+#endif
+    
+    // Initialize tracker.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:GATrackerID];
+}
 
 @end

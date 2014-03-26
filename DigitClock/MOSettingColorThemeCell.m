@@ -76,7 +76,7 @@
     }
     
     
-    NSString *bgName = [NSString stringWithFormat:@"bg%d", [[MOBackgroundColor sharedInstance]bgColorIndex]];
+    NSString *bgName = [NSString stringWithFormat:@"bg%ld", (long)[[MOBackgroundColor sharedInstance]bgColorIndex]];
     [[MOBackgroundColor sharedInstance]setBgColorName:bgName];
     
     if ([self.delegate respondsToSelector:@selector(selectedBackground)]) {

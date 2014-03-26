@@ -35,10 +35,10 @@
         if( self.bgColorIndex ) {
             [defaults setInteger:0 forKey:@"Theme"];
             [defaults synchronize];
-            self.bgColorName = [NSString stringWithFormat:@"bg%d", self.bgColorIndex];
+            self.bgColorName = [NSString stringWithFormat:@"bg%ld", (long)self.bgColorIndex];
             
         } else {
-            self.bgColorName = [NSString stringWithFormat:@"bg%d", self.bgColorIndex];
+            self.bgColorName = [NSString stringWithFormat:@"bg%ld", (long)self.bgColorIndex];
         }
     }
     return self;

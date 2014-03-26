@@ -74,7 +74,7 @@
 //    UIImage *bg = [UIImage imageNamed:bgColorName];
 //
 //    [self.view.layer setContents:(__bridge id)bg.CGImage];
-    [self changeBackground];
+    [self changeBackground:GAInitBackgroundAction];
     [self initDigitView];
     [self initColonView];
     [self initWeekdayLabel];
@@ -236,7 +236,7 @@
 /**
  *  chagne Background from MOBackgroundColor Instance
  */
-- (void)changeBackground
+- (void)changeBackground:(NSString *)action
 {
     NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
     
@@ -247,16 +247,16 @@
     [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
     [defaults synchronize];
     
-    [self sendGA:bgName];
+    [self sendGA:bgName Action:action];
 }
 
-- (void)sendGA:(NSString *)bgName
+- (void)sendGA:(NSString *)bgName Action:(NSString *)action
 {
     NSLog(@"%s", __FUNCTION__);
     id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
     
     [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Theme" 
-                                                          action:@"chageBackground"
+                                                          action:action
                                                            label:bgName
                                                            value:nil]
                    build]];

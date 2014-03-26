@@ -12,6 +12,6 @@
 
 @interface MOViewController : GAITrackedViewController<MOSettingViewControllerDelegate>
 
-- (void)changeBackground;
+- (void)changeBackground:(NSString *)action;
 
 @end

@@ -15,11 +15,13 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#define appstoreID @"770699556"
+#define appstoreID @"848714903"
+
 #define MODigitViewName @"DigitView"
 #define MOSettingViewName @"SettingViewName"
+
 #define GATrackerID @"UA-40784576-4"
+#define GAChangeBackgroundAction @"changeBackground"
+#define GAInitBackgroundAction @"InitBackground"
 
 #define KeepAliveTime 300.0f
-
-#define DEBUG true

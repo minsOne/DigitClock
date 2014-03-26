@@ -174,8 +174,8 @@
 
 - (void)selectedBackground
 {
-    if ([self.delegate respondsToSelector:@selector(changeBackground)]) {
-        [self.delegate changeBackground];
+    if ([self.delegate respondsToSelector:@selector(changeBackground:)]) {
+        [self.delegate changeBackground:GAChangeBackgroundAction];
     }
 }
 

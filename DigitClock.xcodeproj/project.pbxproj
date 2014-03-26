@@ -95,6 +95,12 @@
 		7FE7C8FE18DB18A8001B8C5D /* DigitClockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitClockTests-Info.plist"; sourceTree = "<group>"; };
 		7FE7C90018DB18A8001B8C5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FE7C90218DB18A8001B8C5D /* DigitClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitClockTests.m; sourceTree = "<group>"; };
+		7FF801E318E2679100B99D6C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		7FF801E418E2679100B99D6C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7FF801E518E2679100B99D6C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7FF801E618E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		7FF801E718E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7FF801E818E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85C7E8962564492BA15E09B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F068A1C87734F1FBFA2AB04 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,6 +319,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = minsOne;
 				TargetAttributes = {
+					7FE7C8D318DB18A8001B8C5D = {
+						DevelopmentTeam = 6794ZU679A;
+					};
 					7FE7C8F418DB18A8001B8C5D = {
 						TestTargetID = 7FE7C8D318DB18A8001B8C5D;
 					};
@@ -325,6 +334,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				fr,
 			);
 			mainGroup = 7FE7C8CB18DB18A8001B8C5D;
 			productRefGroup = 7FE7C8D518DB18A8001B8C5D /* Products */;
@@ -434,6 +445,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FE7C8E118DB18A8001B8C5D /* en */,
+				7FF801E418E2679100B99D6C /* ko */,
+				7FF801E718E267A100B99D6C /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -442,6 +455,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FE7C8EA18DB18A8001B8C5D /* Base */,
+				7FF801E318E2679100B99D6C /* ko */,
+				7FF801E618E267A100B99D6C /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -450,6 +465,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FE7C90018DB18A8001B8C5D /* en */,
+				7FF801E518E2679100B99D6C /* ko */,
+				7FF801E818E267A100B99D6C /* fr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -535,6 +552,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
 				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
@@ -553,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
 				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
