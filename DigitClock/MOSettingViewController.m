@@ -13,7 +13,11 @@
 
 
 
-@interface MOSettingViewController ()
+@interface MOSettingViewController () {
+    NSDictionary *cellCountMapping;
+    NSDictionary *makerNameMapping;
+    NSDictionary *sectionHeaderMapping;
+}
 
 @property (nonatomic) NSArray *cellIdentifierArray;
 @property (nonatomic) NSString *selectedTheme;
@@ -43,14 +47,20 @@
 
 - (void)setup
 {
-    self.cellIdentifierArray = [[NSArray alloc]initWithObjects:
-                                @"ColorCellIdentifier",
+    self.cellIdentifierArray = [[NSArray alloc]initWithObjects: @"ColorCellIdentifier",
                                 @"MakerCellIdentifier",
                                 @"VersionCellIdentifier",
                                 nil];
     
     self.navigationItem.title = @"Digit Clock";
     
+    
+    
+    [self initNib];
+}
+
+- (void)initNib
+{
     UINib *colorThemeCellNib = [UINib nibWithNibName:@"MOSettingColorThemeCell" bundle:nil];
     UINib *makerCellNib = [UINib nibWithNibName:@"MOSettingMakerTableViewCell" bundle:nil];
     UINib *versionCellNib = [UINib nibWithNibName:@"MOSettingVersionTableViewCell" bundle:nil];
@@ -58,7 +68,10 @@
     [[self tableView] registerNib:colorThemeCellNib forCellReuseIdentifier:@"ColorCellIdentifier"];
     [[self tableView] registerNib:makerCellNib forCellReuseIdentifier:@"MakerCellIdentifier"];
     [[self tableView] registerNib:versionCellNib forCellReuseIdentifier:@"VersionCellIdentifier"];
-    
+}
+
+- (void)initNavigation
+{
     UIBarButtonItem *backBtn =[[UIBarButtonItem alloc]initWithTitle:@"완료"
                                                               style:UIBarButtonItemStyleDone
                                                              target:self
@@ -71,6 +84,32 @@
                            forState:UIControlStateNormal];
     
     [self.navigationItem setLeftBarButtonItem:backBtn];
+}
+
+- (void)initMapping
+{
+    if(!cellCountMapping) {
+        cellCountMapping = @{
+                    @kThemeSectionIndex : @kThemeSectionCount,
+                    @kMakerSectionIndex : @kMakerSectionCount,
+                    @kVersionSectionIndex : @kVersionSectionCount,
+                    };
+    }
+    
+    if (!makerNameMapping) {
+        makerNameMapping = @{
+                             @0: @"Developer : Ahn Jung Min",
+                             @1: @"Designer : Joo Sung Hyun"
+                             };
+    }
+    
+    if (!sectionHeaderMapping) {
+        sectionHeaderMapping = @{
+                                 @0 : @"Theme",
+                                 @1 : @"Maker",
+                                 @2 : @"Version",
+                                 };
+    }
 }
 
 - (void)viewDidLoad
@@ -101,18 +140,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    switch (section) {
-        case kThemeSectionIndex:
-            return kThemeSectionCount;
-            break;
-        case kMakerSectionIndex:
-            return kMakerSectionCount;
-        case kVersionSectionIndex:
-            return kVersionSectionCount;
-        default:
-            return 1;
-            break;
-    }
+    NSNumber *count = cellCountMapping[[NSNumber numberWithInteger:section]];
+    return count ? [count integerValue] : 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,17 +157,9 @@
     }
     else if (indexPath.section == kMakerSectionIndex) {
         MOSettingMakerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        NSString *title = makerNameMapping[[NSNumber numberWithInteger:indexPath.row]];
         
-        switch (indexPath.row) {
-            case 0:
-                [cell.title setText:@"Developer : Ahn Jung Min"];
-                break;
-            case 1:
-                [cell.title setText:@"Designer : Joo Sung Hyun"];
-                break;
-            default:
-                break;
-        }
+        title ? [cell.title setText:title] : [cell.title setText:@"Default"];
         return cell;
     }
     
@@ -155,21 +176,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    switch (section)
-    {
-        case 0:
-            return @"Theme";
-            break;
-        case 1:
-            return @"Maker";
-            break;
-        case 2:
-            return @"Version";
-            break;
-        default:
-            return @"Title";
-            break;
-    }
+    NSString *titleForHeader = sectionHeaderMapping[[NSNumber numberWithInteger:section]];
+    return titleForHeader ? titleForHeader : @"Title";
 }
 
 - (void)selectedBackground
