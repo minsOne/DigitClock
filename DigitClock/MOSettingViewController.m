@@ -131,7 +131,6 @@
     
     if (indexPath.section == kThemeSectionIndex) {
         MOSettingColorThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        [cell setRoundedButton];
         cell.delegate = self;
         
         return cell;

@@ -18,6 +18,4 @@
 
 @property (weak, nonatomic) id <MOSettingColorThemeCellDelegate> delegate;
 
-- (void)setRoundedButton;
-
 @end

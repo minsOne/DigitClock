@@ -9,7 +9,9 @@
 #import "MOSettingColorThemeCell.h"
 #import "MOBackgroundColor.h"
 
-@interface MOSettingColorThemeCell ()
+@interface MOSettingColorThemeCell () {
+    NSDictionary *backgroundMapping;
+}
 
 @property (nonatomic, strong) IBOutletCollection(UIButton) NSArray *themeButtons;
 
@@ -17,67 +19,46 @@
 
 @implementation MOSettingColorThemeCell
 
+#define kColorButtonCornerRadius 15.0f
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        [self setRoundedButton];
     }
     return self;
 }
 
-- (void)setRoundedButton
+- (void)awakeFromNib
 {
-    NSInteger cnt = 0;
-    NSInteger selectedColorIndex = [[MOBackgroundColor sharedInstance] bgColorIndex];
-    
+    backgroundMapping = @{@1001:@0,
+                          @1002:@1,
+                          @1003:@2,
+                          @1004:@3,
+                          @1005:@4,
+                          @1006:@5,
+                          @1007:@6,
+                          @1008:@7,
+                          };
     for (UIButton *button in self.themeButtons) {
-        [button.layer setCornerRadius:15.0f];
+        [button.layer setCornerRadius:kColorButtonCornerRadius];
         [button.layer setMasksToBounds:YES];
-        if (cnt++ == selectedColorIndex) {
-            [button setAlpha:0.8f];
-            
-        } else {
-            [button setAlpha:1.0f];
-        }
     }
+
 }
 
 - (IBAction)selectBackground:(id)sender
 {
     UIButton *button = (UIButton *)sender;
-    switch (button.tag) {
-        case 1001:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:0];
-            break;
-        case 1002:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:1];
-            break;
-        case 1003:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:2];
-            break;
-        case 1004:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:3];
-            break;
-        case 1005:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:4];
-            break;
-        case 1006:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:5];
-            break;
-        case 1007:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:6];
-            break;
-        case 1008:
-            [[MOBackgroundColor sharedInstance] setBgColorIndex:7];
-            break;
-        default:
-            break;
+    NSNumber *bgColorIndex = backgroundMapping[[NSNumber numberWithInteger:button.tag]];
+    NSString *bgName = nil;
+    
+    if (bgColorIndex) {
+        [[MOBackgroundColor sharedInstance] setBgColorIndex:[bgColorIndex integerValue]];
     }
+    bgName = [NSString stringWithFormat:@"bg%ld", (long)[[MOBackgroundColor sharedInstance]bgColorIndex]];
     
-    
-    NSString *bgName = [NSString stringWithFormat:@"bg%ld", (long)[[MOBackgroundColor sharedInstance]bgColorIndex]];
     [[MOBackgroundColor sharedInstance]setBgColorName:bgName];
     
     if ([self.delegate respondsToSelector:@selector(selectedBackground)]) {
