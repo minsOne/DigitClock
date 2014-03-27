@@ -36,6 +36,10 @@
 		7FE7C8F918DB18A8001B8C5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE7C8DB18DB18A8001B8C5D /* UIKit.framework */; };
 		7FE7C90118DB18A8001B8C5D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FE7C8FF18DB18A8001B8C5D /* InfoPlist.strings */; };
 		7FE7C90318DB18A8001B8C5D /* DigitClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE7C90218DB18A8001B8C5D /* DigitClockTests.m */; };
+		DFE7E86B18E3AD9600DFE5C7 /* MOGAISendEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE7E86A18E3AD9600DFE5C7 /* MOGAISendEvent.m */; };
+		DFE7E86E18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE7E86D18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.m */; };
+		DFE7E87118E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE7E87018E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.m */; };
+		DFE7E87418E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE7E87318E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,14 @@
 		7FF801E818E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85C7E8962564492BA15E09B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F068A1C87734F1FBFA2AB04 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DFE7E86918E3AD9600DFE5C7 /* MOGAISendEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOGAISendEvent.h; sourceTree = "<group>"; };
+		DFE7E86A18E3AD9600DFE5C7 /* MOGAISendEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOGAISendEvent.m; sourceTree = "<group>"; };
+		DFE7E86C18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOGAISendInitBGEvent.h; sourceTree = "<group>"; };
+		DFE7E86D18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOGAISendInitBGEvent.m; sourceTree = "<group>"; };
+		DFE7E86F18E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOGAISendChangeBGEvent.h; sourceTree = "<group>"; };
+		DFE7E87018E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOGAISendChangeBGEvent.m; sourceTree = "<group>"; };
+		DFE7E87218E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOGAISendHeartBeatEvent.h; sourceTree = "<group>"; };
+		DFE7E87318E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOGAISendHeartBeatEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +238,7 @@
 		7FE7C8DD18DB18A8001B8C5D /* DigitClock */ = {
 			isa = PBXGroup;
 			children = (
+				DFE7E86818E3AD7400DFE5C7 /* GAIStatus */,
 				7F8D98BC18E1010F0097C4C9 /* Setting */,
 				7F8D98BD18E1013D0097C4C9 /* Color */,
 				7FC6E4FC18E13A1E00213727 /* Google Analytics Library */,
@@ -267,6 +280,21 @@
 				7FE7C8FF18DB18A8001B8C5D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFE7E86818E3AD7400DFE5C7 /* GAIStatus */ = {
+			isa = PBXGroup;
+			children = (
+				DFE7E86918E3AD9600DFE5C7 /* MOGAISendEvent.h */,
+				DFE7E86A18E3AD9600DFE5C7 /* MOGAISendEvent.m */,
+				DFE7E87218E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.h */,
+				DFE7E87318E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.m */,
+				DFE7E86C18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.h */,
+				DFE7E86D18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.m */,
+				DFE7E86F18E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.h */,
+				DFE7E87018E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.m */,
+			);
+			name = GAIStatus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,11 +438,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFE7E87418E3B0C200DFE5C7 /* MOGAISendHeartBeatEvent.m in Sources */,
+				DFE7E86E18E3AE1500DFE5C7 /* MOGAISendInitBGEvent.m in Sources */,
 				7FE7C8E818DB18A8001B8C5D /* MOAppDelegate.m in Sources */,
+				DFE7E87118E3AE5900DFE5C7 /* MOGAISendChangeBGEvent.m in Sources */,
 				7F6401FD18DF621D00DF677A /* MOSettingColorThemeCell.m in Sources */,
 				7FE3247518DF4445006AAE3B /* MOSettingViewController.m in Sources */,
 				7F8D98AD18DFF6790097C4C9 /* MONavigationSettingViewController.m in Sources */,
 				7FE7C8EE18DB18A8001B8C5D /* MOViewController.m in Sources */,
+				DFE7E86B18E3AD9600DFE5C7 /* MOGAISendEvent.m in Sources */,
 				7F8D98B918E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m in Sources */,
 				7F8D98B418E0A8E90097C4C9 /* MOSettingMakerTableViewCell.m in Sources */,
 				7FE7C8E418DB18A8001B8C5D /* main.m in Sources */,

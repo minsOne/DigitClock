@@ -14,10 +14,18 @@
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
 
+#import "MOGAISendChangeBGEvent.h"
+#import "MOGAISendInitBGEvent.h"
+#import "MOGAISendHeartBeatEvent.h"
+
 @interface MOViewController () {
     NSTimer *timer;
     NSTimer *keepAliveTimer;
     CGPoint lastTranslation;
+    MOGAISendEvent *sendChangeBGEvent;
+    MOGAISendEvent *sendInitBGEvent;
+    MOGAISendEvent *sendHeartBeatEvent;
+    MOGAISendEvent *sendEvent;
 }
 
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *digitViews;
@@ -52,14 +60,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-//    self.screenName = MODigitViewName;
     self.screenName = [[MOBackgroundColor sharedInstance]bgColorName];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -69,16 +75,20 @@
  */
 - (void)setup
 {
-
-//    NSString *bgColorName = [[MOBackgroundColor sharedInstance] bgColorName];
-//    UIImage *bg = [UIImage imageNamed:bgColorName];
-//
-//    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    [self initSendEvent];
     [self changeBackground:GAInitBackgroundAction];
     [self initDigitView];
     [self initColonView];
     [self initWeekdayLabel];
-    
+}
+/**
+ *  initial GAISendEvent Object
+ */
+- (void)initSendEvent
+{
+    sendChangeBGEvent   = [[MOGAISendChangeBGEvent alloc]init];
+    sendInitBGEvent     = [[MOGAISendInitBGEvent alloc]init];
+    sendHeartBeatEvent  = [[MOGAISendHeartBeatEvent alloc]init];
 }
 
 /**
