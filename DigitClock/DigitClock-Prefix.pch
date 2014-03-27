@@ -21,7 +21,7 @@
 #define MOSettingViewName @"SettingViewName"
 
 #define GATrackerID @"UA-40784576-4"
-#define GAChangeBackgroundAction @"changeBackground"
-#define GAInitBackgroundAction @"InitBackground"
+#define GAChangeBackgroundAction @"ChangeBG"
+#define GAInitBackgroundAction @"InitBG"
 
 #define KeepAliveTime 300.0f

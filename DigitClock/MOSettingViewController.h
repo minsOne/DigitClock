@@ -11,7 +11,7 @@
 
 @protocol MOSettingViewControllerDelegate <NSObject>
 
-- (void)changeBackground:(NSString *)action;
+- (void)changeBackground;
 
 @end
 

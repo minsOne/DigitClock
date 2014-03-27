@@ -1,17 +1,16 @@
 //
-//  MOGAISendHeartBeatEvent.m
+//  MOGAISendState.m
 //  DigitClock
 //
 //  Created by edudev on 2014. 3. 27..
 //  Copyright (c) 2014년 minsOne. All rights reserved.
 //
 
-#import "MOGAISendHeartBeatEvent.h"
+#import "MOGAIEvent.h"
 
-@implementation MOGAISendHeartBeatEvent
+@implementation MOGAIEvent
 
-+ (void)sendEvent{
-    
+- (void)sendEvent{
 }
 
 @end

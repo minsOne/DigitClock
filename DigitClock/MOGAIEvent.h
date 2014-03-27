@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GAI.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
+#import "MOBackgroundColor.h"
 
-@interface MOGAISendEvent : NSObject
+@interface MOGAIEvent : NSObject
 
-+ (void)sendEvent;
+- (void)sendEvent;
 
 @end

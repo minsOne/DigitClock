@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MOGAISendEvent.h"
+#import "MOGAIEvent.h"
 
-@interface MOGAISendHeartBeatEvent : MOGAISendEvent
+@interface MOGAIHeartBeatEvent : MOGAIEvent
 
-+ (void)sendEvent;
+- (void)sendEvent;
 
 @end

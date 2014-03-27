@@ -14,18 +14,18 @@
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
 
-#import "MOGAISendChangeBGEvent.h"
-#import "MOGAISendInitBGEvent.h"
-#import "MOGAISendHeartBeatEvent.h"
+#import "MOGAIChangeBGEvent.h"
+#import "MOGAIInitBGEvent.h"
+#import "MOGAIHeartBeatEvent.h"
 
 @interface MOViewController () {
     NSTimer *timer;
     NSTimer *keepAliveTimer;
     CGPoint lastTranslation;
-    MOGAISendEvent *sendChangeBGEvent;
-    MOGAISendEvent *sendInitBGEvent;
-    MOGAISendEvent *sendHeartBeatEvent;
-    MOGAISendEvent *sendEvent;
+    MOGAIEvent *changeBGGAIEvent;
+    MOGAIEvent *initBGGAIEvent;
+    MOGAIEvent *heartBeatGAIEvent;
+    MOGAIEvent *gaievent;
 }
 
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *digitViews;
@@ -50,7 +50,7 @@
     
     keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KeepAliveTime
                                                       target:self 
-                                                    selector:@selector(sendKeepAlive) 
+                                                    selector:@selector(sendHeartBeat)
                                                     userInfo:nil
                                                      repeats:YES];
     
@@ -75,20 +75,19 @@
  */
 - (void)setup
 {
-    [self initSendEvent];
-    [self changeBackground:GAInitBackgroundAction];
+    [self initGAIEvent];
+    [self initBackground];
+    [self changeBackground];
     [self initDigitView];
     [self initColonView];
     [self initWeekdayLabel];
 }
-/**
- *  initial GAISendEvent Object
- */
-- (void)initSendEvent
+
+- (void)initGAIEvent
 {
-    sendChangeBGEvent   = [[MOGAISendChangeBGEvent alloc]init];
-    sendInitBGEvent     = [[MOGAISendInitBGEvent alloc]init];
-    sendHeartBeatEvent  = [[MOGAISendHeartBeatEvent alloc]init];
+    changeBGGAIEvent = [[MOGAIChangeBGEvent alloc]init];
+    heartBeatGAIEvent = [[MOGAIHeartBeatEvent alloc]init];
+    initBGGAIEvent = [[MOGAIInitBGEvent alloc]init];
 }
 
 /**
@@ -246,7 +245,7 @@
 /**
  *  chagne Background from MOBackgroundColor Instance
  */
-- (void)changeBackground:(NSString *)action
+- (void)changeBackground
 {
     NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
     
@@ -257,45 +256,31 @@
     [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
     [defaults synchronize];
     
-    [self sendGA:bgName Action:action];
+    gaievent = changeBGGAIEvent;
+    [gaievent sendEvent];
 }
 
-- (void)sendGA:(NSString *)bgName Action:(NSString *)action
+- (void)initBackground
 {
-    NSLog(@"%s", __FUNCTION__);
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
+    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Theme" 
-                                                          action:action
-                                                           label:bgName
-                                                           value:nil]
-                   build]];
+    UIImage *bg = [UIImage imageNamed:bgName];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    
+    gaievent = initBGGAIEvent;
+    [gaievent sendEvent];
 }
 
-- (void)sendKeepAlive
+- (void)sendHeartBeat
 {
-    NSLog(@"%s", __FUNCTION__);
-    id<GAITracker> tracker= [[GAI sharedInstance] defaultTracker];
-    
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"app"
-                                                          action:@"keepAlive"
-                                                           label:nil
-                                                           value:nil]
-                   build]];
+    gaievent = heartBeatGAIEvent;
+    [gaievent sendEvent];
 }
-
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MOSettingViewController *destViewController = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
     destViewController.delegate = self;
-}
-
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskLandscape;    
 }
 
 @end
