@@ -244,7 +244,6 @@
 				7FC6E4FC18E13A1E00213727 /* Google Analytics Library */,
 				7FE7C8E618DB18A8001B8C5D /* MOAppDelegate.h */,
 				7FE7C8E718DB18A8001B8C5D /* MOAppDelegate.m */,
-				7FE7C8E918DB18A8001B8C5D /* Main.storyboard */,
 				7FE7C8EC18DB18A8001B8C5D /* MOViewController.h */,
 				7FE7C8ED18DB18A8001B8C5D /* MOViewController.m */,
 				7FE7C8EF18DB18A8001B8C5D /* Images.xcassets */,
@@ -256,6 +255,7 @@
 		7FE7C8DE18DB18A8001B8C5D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FE7C8E918DB18A8001B8C5D /* Main.storyboard */,
 				7FE7C8DF18DB18A8001B8C5D /* DigitClock-Info.plist */,
 				7FE7C8E018DB18A8001B8C5D /* InfoPlist.strings */,
 				7FE7C8E318DB18A8001B8C5D /* main.m */,

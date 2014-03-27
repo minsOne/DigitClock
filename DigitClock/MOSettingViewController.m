@@ -17,10 +17,10 @@
     NSDictionary *cellCountMapping;
     NSDictionary *makerNameMapping;
     NSDictionary *sectionHeaderMapping;
+    NSArray *cellIdentifierArray;
 }
 
-@property (nonatomic) NSArray *cellIdentifierArray;
-@property (nonatomic) NSString *selectedTheme;
+@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneItem;
 
 @end
 
@@ -45,55 +45,54 @@
     return self;
 }
 
-- (void)setup
+- (void)viewDidLoad
 {
-    self.cellIdentifierArray = [[NSArray alloc]initWithObjects: @"ColorCellIdentifier",
-                                @"MakerCellIdentifier",
-                                @"VersionCellIdentifier",
-                                nil];
+    [super viewDidLoad];
     
-    self.navigationItem.title = @"Digit Clock";
-    
-    
-    
+    [self initMapping];
     [self initNib];
 }
 
-- (void)initNib
-{
-    UINib *colorThemeCellNib = [UINib nibWithNibName:@"MOSettingColorThemeCell" bundle:nil];
-    UINib *makerCellNib = [UINib nibWithNibName:@"MOSettingMakerTableViewCell" bundle:nil];
-    UINib *versionCellNib = [UINib nibWithNibName:@"MOSettingVersionTableViewCell" bundle:nil];
-    
-    [[self tableView] registerNib:colorThemeCellNib forCellReuseIdentifier:@"ColorCellIdentifier"];
-    [[self tableView] registerNib:makerCellNib forCellReuseIdentifier:@"MakerCellIdentifier"];
-    [[self tableView] registerNib:versionCellNib forCellReuseIdentifier:@"VersionCellIdentifier"];
+-(void)viewWillAppear:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
-- (void)initNavigation
+-(void)viewWillDisappear:(BOOL)animated {
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+}
+
+- (void)didReceiveMemoryWarning
 {
-    UIBarButtonItem *backBtn =[[UIBarButtonItem alloc]initWithTitle:@"완료"
-                                                              style:UIBarButtonItemStyleDone
-                                                             target:self
-                                                             action:@selector(dismissViewAction:)
-                               ];
-    [backBtn setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                     [UIColor grayColor],
-                                     NSForegroundColorAttributeName,
-                                     nil]
-                           forState:UIControlStateNormal];
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Initialize Cell Value
+- (void)initNib
+{
+    cellIdentifierArray = @[@"ColorCellIdentifier",
+                            @"MakerCellIdentifier",
+                            @"VersionCellIdentifier"
+                            ];
+    NSArray *nibArray = @[
+                          [UINib nibWithNibName:@"MOSettingColorThemeCell" bundle:nil],
+                          [UINib nibWithNibName:@"MOSettingMakerTableViewCell" bundle:nil],
+                          [UINib nibWithNibName:@"MOSettingVersionTableViewCell" bundle:nil]
+                          ];
     
-    [self.navigationItem setLeftBarButtonItem:backBtn];
+    for (NSInteger i = 0; i < [cellIdentifierArray count] ; i++) {
+        [[self tableView] registerNib:nibArray[i] forCellReuseIdentifier:cellIdentifierArray[i]];
+    }
 }
 
 - (void)initMapping
 {
     if(!cellCountMapping) {
         cellCountMapping = @{
-                    @kThemeSectionIndex : @kThemeSectionCount,
-                    @kMakerSectionIndex : @kMakerSectionCount,
-                    @kVersionSectionIndex : @kVersionSectionCount,
-                    };
+                             @kThemeSectionIndex : @kThemeSectionCount,
+                              @kMakerSectionIndex : @kMakerSectionCount,
+                              @kVersionSectionIndex : @kVersionSectionCount,
+                              };
     }
     
     if (!makerNameMapping) {
@@ -112,24 +111,6 @@
     }
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [self setup];
-    
-}
-
-- (void)dismissViewAction:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:^{}];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -146,7 +127,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = [NSString stringWithFormat:@"%@", [self.cellIdentifierArray objectAtIndex:indexPath.section]];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"%@", [cellIdentifierArray objectAtIndex:indexPath.section]];
     
     if (indexPath.section == kThemeSectionIndex) {
         MOSettingColorThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -166,10 +147,8 @@
     else {
         MOSettingVersionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-        [cell.version setText:[NSString stringWithFormat:@"Version : %@", version]];
-
-        // Configure the cell...
         
+        [cell.version setText:[NSString stringWithFormat:@"Version : %@", version]];
         return cell;
     }
 }
@@ -180,6 +159,8 @@
     return titleForHeader ? titleForHeader : @"Title";
 }
 
+
+
 - (void)selectedBackground
 {
     if ([self.delegate respondsToSelector:@selector(changeBackground)]) {
@@ -187,12 +168,10 @@
     }
 }
 
--(void)viewWillAppear:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+- (IBAction)dismissViewAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-}
 
 @end

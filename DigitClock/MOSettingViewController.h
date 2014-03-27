@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) id <MOSettingViewControllerDelegate> delegate;
 
--(void)selectedBackground;
+- (void)selectedBackground;
+- (IBAction)dismissViewAction:(id)sender;
 
 @end

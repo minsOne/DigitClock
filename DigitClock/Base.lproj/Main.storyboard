@@ -174,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="895" y="-87"/>
         </scene>
-        <!--Setting View Controller - Root View Controller-->
+        <!--Setting View Controller - Digit Clock-->
         <scene sceneID="GKC-U1-cfZ">
             <objects>
                 <tableViewController id="tSL-oZ-1N3" customClass="MOSettingViewController" sceneMemberID="viewController">
@@ -210,7 +210,17 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="XoC-bz-amH"/>
+                    <navigationItem key="navigationItem" title="Digit Clock" id="XoC-bz-amH">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="ZqO-mj-l29">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="dismissViewAction:" destination="tSL-oZ-1N3" id="LCc-GH-YLJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneItem" destination="ZqO-mj-l29" id="ZJC-YA-toP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCZ-hk-9WB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

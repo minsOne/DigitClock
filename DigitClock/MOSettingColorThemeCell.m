@@ -22,6 +22,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        [self setRoundedButton];
     }
     return self;
 }
