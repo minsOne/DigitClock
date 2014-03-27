@@ -21,7 +21,9 @@
 @interface MOViewController () {
     NSTimer *timer;
     NSTimer *keepAliveTimer;
+    
     CGPoint lastTranslation;
+    
     MOGAIEvent *changeBGGAIEvent;
     MOGAIEvent *initBGGAIEvent;
     MOGAIEvent *heartBeatGAIEvent;
@@ -31,6 +33,7 @@
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *digitViews;
 @property (nonatomic, strong) IBOutletCollection(UIView) NSArray *colonViews;
 @property (nonatomic, strong) IBOutletCollection(UILabel) NSArray *weekdayLabels;
+
 @end
 
 @implementation MOViewController
@@ -129,7 +132,6 @@
         [view.layer setContentsGravity:kCAGravityResizeAspect];
         [view.layer setMagnificationFilter:kCAFilterNearest];
     }
-
 }
 
 /**
@@ -201,8 +203,8 @@
         [self setDigit:components.minute % 10 forView:self.digitViews[3]];
         [self setDigit:components.second / 10 forView:self.digitViews[4]];
         [self setDigit:components.second % 10 forView:self.digitViews[5]];
-        [self setColon];
         [self setWeekday:components.weekday];
+        [self setColon];
     }];
 }
 /**
@@ -213,7 +215,6 @@
 - (void)changeViewAlpha:(CGPoint)translation
 {
     CGFloat alpha = [self.view alpha];
-    NSLog(@"View Alpha : %f", alpha);
     
     if ( lastTranslation.y > translation.y && alpha < 1.0f ) {
         [self.view setAlpha:alpha + 0.01f];
@@ -229,11 +230,11 @@
 - (void)changeBackground
 {
     NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
-    
     UIImage *bg = [UIImage imageNamed:bgName];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     [self.view.layer setContents:(__bridge id)bg.CGImage];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
     [defaults synchronize];
     
@@ -247,8 +248,8 @@
 - (void)initBackground
 {
     NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
-    
     UIImage *bg = [UIImage imageNamed:bgName];
+    
     [self.view.layer setContents:(__bridge id)bg.CGImage];
     
     gaievent = initBGGAIEvent;
@@ -278,8 +279,7 @@
 - (IBAction)displayGestureForPanGestureRecognizer:(UIPanGestureRecognizer *)sender
 {
     CGPoint translation = [sender translationInView:self.view];
-    NSLog(@"%@", NSStringFromCGPoint(translation));
-    
+
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
             lastTranslation = translation;
