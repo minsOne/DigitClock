@@ -41,26 +41,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [self setup];
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                  target:self
-                                                selector:@selector(tick)
-                                                userInfo:nil
-                                                 repeats:YES];
-    
-    keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KeepAliveTime
-                                                      target:self 
-                                                    selector:@selector(sendHeartBeat)
-                                                    userInfo:nil
-                                                     repeats:YES];
+    [self setupTimer];
     
     [self tick];
 }
 
+/**
+ *  Set screenName for GAI
+ */
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.screenName = [[MOBackgroundColor sharedInstance]bgColorName];
+    [self setScreenName:[[MOBackgroundColor sharedInstance]bgColorName]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +75,27 @@
     [self initWeekdayLabel];
 }
 
+/**
+ *  initial Timer
+ */
+- (void)setupTimer
+{
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(tick)
+                                           userInfo:nil
+                                            repeats:YES];
+    
+    keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KeepAliveTime
+                                                      target:self
+                                                    selector:@selector(sendHeartBeat)
+                                                    userInfo:nil
+                                                     repeats:YES];
+}
+
+/**
+ *  initial GAIEvent
+ */
 - (void)initGAIEvent
 {
     changeBGGAIEvent = [[MOGAIChangeBGEvent alloc]init];
