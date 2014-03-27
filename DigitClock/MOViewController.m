@@ -179,10 +179,7 @@
  */
 - (void)tick
 {
-    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger units = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    NSDateComponents *components = [calendar components:units fromDate:[NSDate date]];
+    NSDateComponents *components = [self getDateComponents];
     
     [UIView animateWithDuration:1.0 animations:^{
         [self setDigit:components.hour / 10 forView:self.digitViews[0]];
@@ -195,6 +192,71 @@
         [self setWeekday:components.weekday];
     }];
 }
+/**
+ *  change View Alpha from up down gesture
+ *
+ *  @param translation gesture Point
+ */
+- (void)changeViewAlpha:(CGPoint)translation
+{
+    CGFloat alpha = [self.view alpha];
+    NSLog(@"View Alpha : %f", alpha);
+    
+    if ( lastTranslation.y > translation.y && alpha < 1.0f ) {
+        [self.view setAlpha:alpha + 0.01f];
+    } else if ( lastTranslation.y < translation.y && alpha >= 0.02f ) {
+        [self.view setAlpha:alpha - 0.01f];
+    }
+    lastTranslation = translation;
+}
+
+/**
+ *  chagne Background
+ */
+- (void)changeBackground
+{
+    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
+    
+    UIImage *bg = [UIImage imageNamed:bgName];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
+    [defaults synchronize];
+    
+    gaievent = changeBGGAIEvent;
+    [gaievent sendEvent];
+}
+
+/**
+ *  initialize background
+ */
+- (void)initBackground
+{
+    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
+    
+    UIImage *bg = [UIImage imageNamed:bgName];
+    [self.view.layer setContents:(__bridge id)bg.CGImage];
+    
+    gaievent = initBGGAIEvent;
+    [gaievent sendEvent];
+}
+
+/**
+ *  Send HeartHeat
+ */
+- (void)sendHeartBeat
+{
+    gaievent = heartBeatGAIEvent;
+    [gaievent sendEvent];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MOSettingViewController *destViewController = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
+    destViewController.delegate = self;
+}
+
 /**
  *  display View Gesture
  *
@@ -224,63 +286,20 @@
             break;
     }
 }
+
 /**
- *  change View Alpha from up down gesture
+ *  Return DateComponents
  *
- *  @param translation gesture Point
+ *  @return DateComponents
  */
-- (void)changeViewAlpha:(CGPoint)translation
+- (NSDateComponents *)getDateComponents
 {
-    CGFloat alpha = [self.view alpha];
-    NSLog(@"View Alpha : %f", alpha);
+    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    NSUInteger units = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     
-    if ( lastTranslation.y > translation.y && alpha < 1.0f ) {
-        [self.view setAlpha:alpha + 0.01f];
-    } else if ( lastTranslation.y < translation.y && alpha >= 0.02f ) {
-        [self.view setAlpha:alpha - 0.01f];
-    }
-    lastTranslation = translation;
-}
-
-/**
- *  chagne Background from MOBackgroundColor Instance
- */
-- (void)changeBackground
-{
-    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
+    NSDateComponents *components = [calendar components:units fromDate:[NSDate date]];
     
-    UIImage *bg = [UIImage imageNamed:bgName];
-    [self.view.layer setContents:(__bridge id)bg.CGImage];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
-    [defaults synchronize];
-    
-    gaievent = changeBGGAIEvent;
-    [gaievent sendEvent];
-}
-
-- (void)initBackground
-{
-    NSString *bgName = [[MOBackgroundColor sharedInstance]bgColorName];
-    
-    UIImage *bg = [UIImage imageNamed:bgName];
-    [self.view.layer setContents:(__bridge id)bg.CGImage];
-    
-    gaievent = initBGGAIEvent;
-    [gaievent sendEvent];
-}
-
-- (void)sendHeartBeat
-{
-    gaievent = heartBeatGAIEvent;
-    [gaievent sendEvent];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    MOSettingViewController *destViewController = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
-    destViewController.delegate = self;
+    return components;
 }
 
 @end
