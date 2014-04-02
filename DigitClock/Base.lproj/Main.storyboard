@@ -120,10 +120,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swj-tA-OJJ">
-                                <rect key="frame" x="534" y="286" width="24" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swj-tA-OJJ">
+                                <rect key="frame" x="514" y="266" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="MuF-Ss-1Lg"/>
+                                    <constraint firstAttribute="width" constant="44" id="eIG-40-9VQ"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="menu_settings_bt">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -136,9 +140,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Swj-tA-OJJ" secondAttribute="trailing" constant="10" id="G5o-hN-34Y"/>
+                            <constraint firstAttribute="trailing" secondItem="Swj-tA-OJJ" secondAttribute="trailing" id="G5o-hN-34Y"/>
                             <constraint firstAttribute="centerX" secondItem="YqK-PB-9cd" secondAttribute="centerX" id="ceF-Tb-Kf6"/>
-                            <constraint firstItem="4ff-ib-fp5" firstAttribute="top" secondItem="Swj-tA-OJJ" secondAttribute="bottom" constant="10" id="rc4-yz-XAE"/>
+                            <constraint firstItem="4ff-ib-fp5" firstAttribute="top" secondItem="Swj-tA-OJJ" secondAttribute="bottom" id="rc4-yz-XAE"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <connections>

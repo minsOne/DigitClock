@@ -35,14 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-//- (NSUInteger)supportedInterfaceOrientations {
-//    return UIInterfaceOrientationMaskPortrait;
-//}
-//
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-//    return UIInterfaceOrientationPortrait;
-//}
-
 @end
