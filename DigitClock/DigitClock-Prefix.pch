@@ -13,6 +13,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "NSDate+DateTools.h"
 #endif
 
 #define appstoreID @"848714903"
@@ -25,3 +26,5 @@
 #define GAInitBackgroundAction @"InitBG"
 
 #define KeepAliveTime 300.0f
+
+#define USE_GATracker FALSE

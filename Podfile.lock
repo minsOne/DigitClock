@@ -1,13 +1,16 @@
 PODS:
   - Appirater (2.0.2)
+  - DateTools (1.0)
   - MTLog (0.6.1)
 
 DEPENDENCIES:
   - Appirater
+  - DateTools
   - MTLog
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
+  DateTools: 6123dfa046b91a444d5fb53e67f970bfd8374057
   MTLog: 7a8b3f4ab0fcc457428d85a66b731c6e2ef64bce
 
 COCOAPODS: 0.29.0

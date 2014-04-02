@@ -55,7 +55,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+#if USE_GATracker
     [self setScreenName:[[MOBackgroundColor sharedInstance]bgColorName]];
+#endif
 }
 
 - (void)didReceiveMemoryWarning
@@ -88,12 +90,13 @@
                                            selector:@selector(tick)
                                            userInfo:nil
                                             repeats:YES];
-    
+#if USE_GATracker
     keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KeepAliveTime
                                                       target:self
                                                     selector:@selector(sendHeartBeat)
                                                     userInfo:nil
                                                      repeats:YES];
+#endif
 }
 
 /**
@@ -194,16 +197,15 @@
  */
 - (void)tick
 {
-    NSDateComponents *components = [self getDateComponents];
-    
+    NSDate *date = [NSDate date];
     [UIView animateWithDuration:1.0 animations:^{
-        [self setDigit:components.hour / 10 forView:self.digitViews[0]];
-        [self setDigit:components.hour % 10 forView:self.digitViews[1]];
-        [self setDigit:components.minute / 10 forView:self.digitViews[2]];
-        [self setDigit:components.minute % 10 forView:self.digitViews[3]];
-        [self setDigit:components.second / 10 forView:self.digitViews[4]];
-        [self setDigit:components.second % 10 forView:self.digitViews[5]];
-        [self setWeekday:components.weekday];
+        [self setDigit:date.hour / 10 forView:self.digitViews[0]];
+        [self setDigit:date.hour % 10 forView:self.digitViews[1]];
+        [self setDigit:date.minute / 10 forView:self.digitViews[2]];
+        [self setDigit:date.minute % 10 forView:self.digitViews[3]];
+        [self setDigit:date.second / 10 forView:self.digitViews[4]];
+        [self setDigit:date.second % 10 forView:self.digitViews[5]];
+        [self setWeekday:date.weekday];
         [self setColon];
     }];
 }
@@ -237,9 +239,10 @@
     
     [defaults setInteger:[[MOBackgroundColor sharedInstance]bgColorIndex]  forKey:@"Theme"];
     [defaults synchronize];
-    
+#if USE_GATracker
     gaievent = changeBGGAIEvent;
     [gaievent sendEvent];
+#endif
 }
 
 /**
@@ -251,9 +254,10 @@
     UIImage *bg = [UIImage imageNamed:bgName];
     
     [self.view.layer setContents:(__bridge id)bg.CGImage];
-    
+#if USE_GATracker
     gaievent = initBGGAIEvent;
     [gaievent sendEvent];
+#endif
 }
 
 /**
@@ -298,21 +302,6 @@
         default:
             break;
     }
-}
-
-/**
- *  Return DateComponents
- *
- *  @return DateComponents
- */
-- (NSDateComponents *)getDateComponents
-{
-    NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger units = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSWeekCalendarUnit | NSWeekdayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    NSDateComponents *components = [calendar components:units fromDate:[NSDate date]];
-    
-    return components;
 }
 
 @end
