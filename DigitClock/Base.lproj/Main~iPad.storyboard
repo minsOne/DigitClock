@@ -156,13 +156,17 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRF-cm-O3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer delaysTouchesBegan="YES" minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="0HI-3d-V3Q">
+                    <connections>
+                        <action selector="displayGestureForPanGestureRecognizer:" destination="jiJ-OO-bKO" id="yUC-xS-as6"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-575" y="-188"/>
         </scene>
         <!--Setting View Controller - Digit Clock-->
         <scene sceneID="RU1-Yf-qof">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tpK-3I-fG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="EXV-3G-VaF" customClass="MOSettingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iO4-3Z-jFc">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
@@ -171,7 +175,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                         <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Kh8-Kg-Rqe">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ColorCellIdentifier" id="Kh8-Kg-Rqe">
                                 <rect key="frame" x="0.0" y="119" width="480" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kh8-Kg-Rqe" id="cXg-vK-4Jg">
@@ -179,7 +183,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FtJ-u1-Fwj">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MakerCellIdentifier" id="FtJ-u1-Fwj">
                                 <rect key="frame" x="0.0" y="163" width="480" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FtJ-u1-Fwj" id="JdW-JC-UMz">
@@ -187,7 +191,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OL8-C6-eYh">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LicenseCellIdentifier" id="OL8-C6-eYh">
                                 <rect key="frame" x="0.0" y="207" width="480" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OL8-C6-eYh" id="apf-X5-HLS">
@@ -203,13 +207,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Digit Clock" id="arE-qi-5vq"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tpK-3I-fG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1370" y="-339"/>
         </scene>
         <!--Navigation Setting View Controller-->
         <scene sceneID="hDz-QM-c95">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ES9-hz-QxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController modalPresentationStyle="formSheet" id="UIV-LD-IDg" customClass="MONavigationSettingViewController" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="703" height="768"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -226,6 +230,7 @@
                         <segue destination="EXV-3G-VaF" kind="relationship" relationship="rootViewController" id="Ms6-Ni-DJT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ES9-hz-QxA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="638" y="-333"/>
         </scene>

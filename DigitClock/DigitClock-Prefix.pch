@@ -27,6 +27,6 @@
 
 #define KeepAliveTime 300.0f
 
-#define USE_GATracker FALSE
+#define USE_GATracker TRUE
 
 #define IS_IPHONE ( [ [ [ UIDevice currentDevice ] model ] hasPrefix: @"iPhone" ] )

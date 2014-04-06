@@ -18,6 +18,8 @@
 		7F8D98BA18E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */; };
 		7FAB658718F1486700A422F4 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB658A18F1486700A422F4 /* Main~iPad.storyboard */; };
 		7FAB658818F1486700A422F4 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB658A18F1486700A422F4 /* Main~iPad.storyboard */; };
+		7FAB659818F1B36500A422F4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAB659718F1B36500A422F4 /* CFNetwork.framework */; };
+		7FAB659A18F1B37000A422F4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAB659918F1B37000A422F4 /* StoreKit.framework */; };
 		7FC6E50418E13A7200213727 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50318E13A7200213727 /* libGoogleAnalyticsServices.a */; };
 		7FC6E50618E13A9200213727 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50518E13A9200213727 /* CoreData.framework */; };
 		7FC6E50818E13A9A00213727 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50718E13A9A00213727 /* AdSupport.framework */; };
@@ -73,6 +75,8 @@
 		7FAB659418F1AF4D00A422F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		7FAB659518F1AF5100A422F4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		7FAB659618F1AF5300A422F4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		7FAB659718F1B36500A422F4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7FAB659918F1B37000A422F4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7FC6E4FD18E13A6400213727 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		7FC6E4FE18E13A6400213727 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		7FC6E4FF18E13A6400213727 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAB659A18F1B37000A422F4 /* StoreKit.framework in Frameworks */,
+				7FAB659818F1B36500A422F4 /* CFNetwork.framework in Frameworks */,
 				7FC6E50C18E13AB700213727 /* libz.dylib in Frameworks */,
 				7FC6E50A18E13AA800213727 /* SystemConfiguration.framework in Frameworks */,
 				7FC6E50818E13A9A00213727 /* AdSupport.framework in Frameworks */,
@@ -232,6 +238,8 @@
 		7FE7C8D618DB18A8001B8C5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7FAB659918F1B37000A422F4 /* StoreKit.framework */,
+				7FAB659718F1B36500A422F4 /* CFNetwork.framework */,
 				7FC6E50B18E13AB700213727 /* libz.dylib */,
 				7FC6E50918E13AA800213727 /* SystemConfiguration.framework */,
 				7FC6E50718E13A9A00213727 /* AdSupport.framework */,
