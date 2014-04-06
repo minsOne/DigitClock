@@ -41,6 +41,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        [self.view setAlpha:1.0f];
     }
     return self;
 }
@@ -54,11 +55,15 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    if (IS_IPHONE) {
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    }
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
-    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    if (IS_IPHONE) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,18 +75,19 @@
 #pragma mark - Initialize Cell Value
 - (void)initNib
 {
-    cellIdentifierArray = @[@"ColorCellIdentifier",
-                            @"MakerCellIdentifier",
-                            @"VersionCellIdentifier"
+    cellIdentifierArray = @[
+                            @{@"ColorCellIdentifier": [UINib nibWithNibName:@"MOSettingColorThemeCell" bundle:nil]
+                              },
+                            @{@"MakerCellIdentifier": [UINib nibWithNibName:@"MOSettingMakerTableViewCell" bundle:nil]
+                              },
+                            @{@"VersionCellIdentifier": [UINib nibWithNibName:@"MOSettingVersionTableViewCell" bundle:nil]
+                              }
                             ];
-    NSArray *nibArray = @[
-                          [UINib nibWithNibName:@"MOSettingColorThemeCell" bundle:nil],
-                          [UINib nibWithNibName:@"MOSettingMakerTableViewCell" bundle:nil],
-                          [UINib nibWithNibName:@"MOSettingVersionTableViewCell" bundle:nil]
-                          ];
     
     for (NSInteger i = 0; i < [cellIdentifierArray count] ; i++) {
-        [[self tableView] registerNib:nibArray[i] forCellReuseIdentifier:cellIdentifierArray[i]];
+        NSString *cellIdentifier = [[cellIdentifierArray[i] allKeys]objectAtIndex:0];
+        [[self tableView] registerNib:[cellIdentifierArray[i] objectForKey:cellIdentifier]
+               forCellReuseIdentifier:cellIdentifier];
     }
 }
 
@@ -127,7 +133,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *CellIdentifier = [NSString stringWithFormat:@"%@", [cellIdentifierArray objectAtIndex:indexPath.section]];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"%@", [[[cellIdentifierArray objectAtIndex:indexPath.section]allKeys] objectAtIndex:0] ];
     
     if (indexPath.section == kThemeSectionIndex) {
         MOSettingColorThemeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];

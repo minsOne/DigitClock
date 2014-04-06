@@ -1,0 +1,24 @@
+
+/* Class = "IBUILabel"; text = "FRI"; ObjectID = "Ht8-aY-sD9"; */
+"Ht8-aY-sD9.text" = "FRI";
+
+/* Class = "IBUILabel"; text = "SUN"; ObjectID = "VgO-MP-r4F"; */
+"VgO-MP-r4F.text" = "SUN";
+
+/* Class = "IBUILabel"; text = "WED"; ObjectID = "Zpg-xg-AoN"; */
+"Zpg-xg-AoN.text" = "WED";
+
+/* Class = "IBUINavigationItem"; title = "Digit Clock"; ObjectID = "arE-qi-5vq"; */
+"arE-qi-5vq.title" = "Digit Clock";
+
+/* Class = "IBUILabel"; text = "MON"; ObjectID = "g1f-jh-8qk"; */
+"g1f-jh-8qk.text" = "MON";
+
+/* Class = "IBUILabel"; text = "SAT"; ObjectID = "jkZ-Ip-Adv"; */
+"jkZ-Ip-Adv.text" = "SAT";
+
+/* Class = "IBUILabel"; text = "TUE"; ObjectID = "qUw-U2-dzT"; */
+"qUw-U2-dzT.text" = "TUE";
+
+/* Class = "IBUILabel"; text = "THU"; ObjectID = "ul5-bh-4iw"; */
+"ul5-bh-4iw.text" = "THU";

@@ -16,6 +16,8 @@
 		7F8D98B518E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B318E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib */; };
 		7F8D98B918E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */; };
 		7F8D98BA18E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */; };
+		7FAB658718F1486700A422F4 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB658A18F1486700A422F4 /* Main~iPad.storyboard */; };
+		7FAB658818F1486700A422F4 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FAB658A18F1486700A422F4 /* Main~iPad.storyboard */; };
 		7FC6E50418E13A7200213727 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50318E13A7200213727 /* libGoogleAnalyticsServices.a */; };
 		7FC6E50618E13A9200213727 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50518E13A9200213727 /* CoreData.framework */; };
 		7FC6E50818E13A9A00213727 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC6E50718E13A9A00213727 /* AdSupport.framework */; };
@@ -67,6 +69,10 @@
 		7F8D98B618E0B0A40097C4C9 /* MOSettingVersionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOSettingVersionTableViewCell.h; sourceTree = "<group>"; };
 		7F8D98B718E0B0A40097C4C9 /* MOSettingVersionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOSettingVersionTableViewCell.m; sourceTree = "<group>"; };
 		7F8D98B818E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MOSettingVersionTableViewCell.xib; sourceTree = "<group>"; };
+		7FAB658918F1486700A422F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Main~iPad.storyboard"; sourceTree = "<group>"; };
+		7FAB659418F1AF4D00A422F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		7FAB659518F1AF5100A422F4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		7FAB659618F1AF5300A422F4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		7FC6E4FD18E13A6400213727 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		7FC6E4FE18E13A6400213727 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		7FC6E4FF18E13A6400213727 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
@@ -99,10 +105,8 @@
 		7FE7C8FE18DB18A8001B8C5D /* DigitClockTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DigitClockTests-Info.plist"; sourceTree = "<group>"; };
 		7FE7C90018DB18A8001B8C5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FE7C90218DB18A8001B8C5D /* DigitClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitClockTests.m; sourceTree = "<group>"; };
-		7FF801E318E2679100B99D6C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		7FF801E418E2679100B99D6C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FF801E518E2679100B99D6C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7FF801E618E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		7FF801E718E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7FF801E818E267A100B99D6C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		85C7E8962564492BA15E09B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,13 @@
 			name = Color;
 			sourceTree = "<group>";
 		};
+		7FAB658318F0033C00A422F4 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		7FC6E4FC18E13A1E00213727 /* Google Analytics Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +249,7 @@
 		7FE7C8DD18DB18A8001B8C5D /* DigitClock */ = {
 			isa = PBXGroup;
 			children = (
+				7FAB658318F0033C00A422F4 /* iPad */,
 				DFE7E86818E3AD7400DFE5C7 /* GAIStatus */,
 				7F8D98BC18E1010F0097C4C9 /* Setting */,
 				7F8D98BD18E1013D0097C4C9 /* Color */,
@@ -256,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				7FE7C8E918DB18A8001B8C5D /* Main.storyboard */,
+				7FAB658A18F1486700A422F4 /* Main~iPad.storyboard */,
 				7FE7C8DF18DB18A8001B8C5D /* DigitClock-Info.plist */,
 				7FE7C8E018DB18A8001B8C5D /* InfoPlist.strings */,
 				7FE7C8E318DB18A8001B8C5D /* main.m */,
@@ -383,6 +396,7 @@
 			files = (
 				7F6401FF18DF626500DF677A /* MOSettingColorThemeCell.xib in Resources */,
 				7F8D98BA18E0B0A40097C4C9 /* MOSettingVersionTableViewCell.xib in Resources */,
+				7FAB658718F1486700A422F4 /* Main~iPad.storyboard in Resources */,
 				7FE7C8F018DB18A8001B8C5D /* Images.xcassets in Resources */,
 				7F8D98B518E0A8E90097C4C9 /* MOSettingMakerTableViewCell.xib in Resources */,
 				7FE7C8E218DB18A8001B8C5D /* InfoPlist.strings in Resources */,
@@ -394,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FAB658818F1486700A422F4 /* Main~iPad.storyboard in Resources */,
 				7FE7C90118DB18A8001B8C5D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +488,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7FAB658A18F1486700A422F4 /* Main~iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FAB658918F1486700A422F4 /* Base */,
+			);
+			name = "Main~iPad.storyboard";
+			sourceTree = "<group>";
+		};
 		7FE7C8E018DB18A8001B8C5D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -487,8 +510,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				7FE7C8EA18DB18A8001B8C5D /* Base */,
-				7FF801E318E2679100B99D6C /* ko */,
-				7FF801E618E267A100B99D6C /* fr */,
+				7FAB659418F1AF4D00A422F4 /* en */,
+				7FAB659518F1AF5100A422F4 /* fr */,
+				7FAB659618F1AF5300A422F4 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -588,11 +612,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
 				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DigitClock",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -607,11 +633,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DigitClock/DigitClock-Prefix.pch";
 				INFOPLIST_FILE = "DigitClock/DigitClock-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DigitClock",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

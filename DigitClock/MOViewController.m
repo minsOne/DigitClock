@@ -19,7 +19,7 @@
 #import "MOGAIHeartBeatEvent.h"
 
 @interface MOViewController () {
-    NSTimer *timer;
+    NSTimer *tickTimer;
     NSTimer *keepAliveTimer;
     
     CGPoint lastTranslation;
@@ -44,8 +44,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     [self setup];
-    [self setupTimer];
-    
+    [self setHeartBeatTimer];
+    [self onTickTimer];
     [self tick];
 }
 
@@ -81,15 +81,10 @@
 }
 
 /**
- *  initial Timer
+ *  initial HeartBeat Timer
  */
-- (void)setupTimer
+- (void)setHeartBeatTimer
 {
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                             target:self
-                                           selector:@selector(tick)
-                                           userInfo:nil
-                                            repeats:YES];
 #if USE_GATracker
     keepAliveTimer = [NSTimer scheduledTimerWithTimeInterval:KeepAliveTime
                                                       target:self
@@ -97,6 +92,28 @@
                                                     userInfo:nil
                                                      repeats:YES];
 #endif
+}
+
+/**
+ *  Initial TickTimer
+ */
+- (void)onTickTimer
+{
+    tickTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                             target:self
+                                           selector:@selector(tick)
+                                           userInfo:nil
+                                            repeats:YES];
+
+}
+
+/**
+ *  Clear TickTimer
+ */
+- (void)offTickTimer
+{
+    [tickTimer invalidate];
+    tickTimer = nil;
 }
 
 /**
@@ -269,6 +286,12 @@
     [gaievent sendEvent];
 }
 
+/**
+ *  prepare For Segue
+ *
+ *  @param segue  segue
+ *  @param sender sender
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     MOSettingViewController *destViewController = [[[segue destinationViewController]viewControllers]objectAtIndex:0];
